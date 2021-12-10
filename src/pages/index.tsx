@@ -1,25 +1,54 @@
 import type { NextPage } from 'next';
-import { Radio } from '../components/DefaultDesignComponents/Inputs';
+import { useState } from 'react';
+import {
+  RadioButton,
+  RadioButtonLabel,
+  Radio
+} from '../components/DefaultDesignComponents/Inputs';
 
-const Home: NextPage = () => (
-  <div>
-    <form>
-      {/* <div>
-        <Radio id="huey" name="drone" />
-        <label htmlFor="huey">Huey</label>
-      </div>
-
-      <div>
-        <Radio id="dewey" name="drone" />
-        <label htmlFor="dewey">Dewey</label>
-      </div>
-
-      <div>
-        <Radio id="louie" name="drone" />
-        <label htmlFor="louie">Louie</label>
-      </div> */}
-    </form>
-  </div>
-);
+const Home: NextPage = () => {
+  const [select, setSelect] = useState('betterPriceOnly');
+  const handleSelectChange = event => {
+    const { value } = event.target;
+    setSelect(value);
+  };
+  return (
+    <div>
+      <Radio>
+        <RadioButton
+          type="radio"
+          name="radio"
+          value="betterPriceOnly"
+          checked={select === 'betterPriceOnly'}
+          onChange={event => handleSelectChange(event)}
+        />
+        <RadioButtonLabel />
+        <div>Auto accept better price only</div>
+      </Radio>
+      <Radio>
+        <RadioButton
+          type="radio"
+          name="radio"
+          value="anyPriceChange"
+          checked={select === 'anyPriceChange'}
+          onChange={event => handleSelectChange(event)}
+        />
+        <RadioButtonLabel />
+        <div>Auto accept any price change</div>
+      </Radio>
+      <Radio>
+        <RadioButton
+          type="radio"
+          name="radio"
+          value="neverAutoAccept"
+          checked={select === 'neverAutoAccept'}
+          onChange={event => handleSelectChange(event)}
+        />
+        <RadioButtonLabel />
+        <div>Never auto accept a price change</div>
+      </Radio>
+    </div>
+  );
+};
 
 export default Home;
