@@ -46,7 +46,7 @@ const theme = {
       openSans: "open-sans",
       neoSans: "Neo Sans Std Regular",
     },
-    width: {
+    weight: {
       light: 300,
       regular: 400,
       semiBold: 600,
