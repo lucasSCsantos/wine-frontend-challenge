@@ -6,10 +6,10 @@ const { color, font, button } = theme;
 export type ButtonProps = {
   type?: keyof typeof color.functional;
   weight?: keyof typeof font.weight;
+  size?: keyof typeof button.size;
   fill?: boolean;
   hover?: boolean;
   shadow?: boolean;
-  size?: keyof typeof button.size;
   circle?: boolean;
 };
 
