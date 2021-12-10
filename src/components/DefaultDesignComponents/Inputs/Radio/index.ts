@@ -1,5 +1,9 @@
 import styled, { css } from 'styled-components';
 
+export type RadioProps = {
+  type?: string;
+};
+
 export const Radio = styled.div`
   display: flex;
   align-items: center;
@@ -17,7 +21,9 @@ export const RadioButtonLabel = styled.label`
   border: 2px solid #ccc;
   background-color: #fff;
 `;
-export const RadioButton = styled.input`
+export const RadioButton = styled.input.attrs<RadioProps>(() => ({
+  type: 'radio'
+}))<RadioProps>`
   opacity: 0;
   z-index: 1;
   border-radius: 50%;
