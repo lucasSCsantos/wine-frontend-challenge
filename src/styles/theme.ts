@@ -10,7 +10,8 @@ const theme = {
     },
     structure: {
       white: '#ffffff',
-      black: '#000000'
+      black: '#000000',
+      transparent: '#00000000'
     },
     gray: {
       default: '#555555',
@@ -18,13 +19,30 @@ const theme = {
       light: '#888888'
     },
     functional: {
-      succes: '#7EBC43'
+      success: '#7EBC43',
+      successDark: '#5d8931'
     },
     branding: {
       tannat: '#B6116E',
       tavel: '#F79552',
       tavelLight: '#F9B950',
       chenin: '#F26649'
+    }
+  },
+  button: {
+    size: {
+      smart: {
+        width: '38px',
+        height: '38px'
+      },
+      medium: {
+        width: '73px',
+        height: '38px'
+      },
+      large: {
+        width: '256px',
+        height: '39.36px'
+      }
     }
   },
   font: {
