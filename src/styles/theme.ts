@@ -33,12 +33,6 @@ const theme = {
       xxLarge: "28px",
       giant: "30px",
     },
-    family: {
-      lato: "lato",
-      sansSerif: "sans-serif",
-      saira: "saira",
-      openSans: "open-sans",
-    },
     width: {
       light: 300,
       regular: 400,
