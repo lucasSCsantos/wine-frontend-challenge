@@ -1,15 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-  *{
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
   body {
-		background-color: ${({ theme }) => theme.colors.background};
-    font: 400 16px 'Lato', sans-serif;
+		background-color: ${({ theme }) => theme.color.background};
+    font: 400 16px 'Neo Sans Std Regular', sans-serif;
   }
 
   /* img {
