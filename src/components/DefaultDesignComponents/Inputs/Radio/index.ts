@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 
 export type RadioProps = {
   type?: string;
+  checked?: boolean;
 };
 
 export const Radio = styled.div`
@@ -21,15 +22,46 @@ export const RadioButtonLabel = styled.label`
   border: 2px solid #ccc;
   background-color: #fff;
 `;
-export const RadioButton = styled.input.attrs<RadioProps>(() => ({
-  type: 'radio'
-}))<RadioProps>`
+export const RadioButton = styled.input<RadioProps>`
   opacity: 0;
   z-index: 1;
   border-radius: 50%;
   width: 24px;
   height: 24px;
   margin: 5px;
+  ${({ checked }) =>
+    checked &&
+    css`
+      & + ${RadioButtonLabel} {
+        transition: ease 0.2s;
+        border: 2px solid
+          ${({ theme }) => theme.color.functional.tannat.default};
+        &::after {
+          content: '';
+          display: block;
+          border-radius: 50%;
+          width: 12px;
+          height: 12px;
+          margin: 4px;
+          background: ${({ theme }) => theme.color.functional.tannat.default};
+          transform: scale(1);
+        }
+      }
+    `}
+  &:checked + ${RadioButtonLabel} {
+    transition: ease 0.2s;
+    border: 2px solid ${({ theme }) => theme.color.functional.tannat.default};
+    &::after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin: 4px;
+      background: ${({ theme }) => theme.color.functional.tannat.default};
+      transform: scale(1);
+    }
+  }
 
   & ~ ${RadioButtonLabel} {
     &::after {
@@ -58,7 +90,7 @@ export const RadioButton = styled.input.attrs<RadioProps>(() => ({
       transform: scale(1);
     }
   }
-  ${props =>
+  /* ${props =>
     props.checked &&
     css`
       &:checked + ${RadioButtonLabel} {
@@ -76,5 +108,5 @@ export const RadioButton = styled.input.attrs<RadioProps>(() => ({
           transform: scale(1);
         }
       }
-    `}
+    `} */
 `;
