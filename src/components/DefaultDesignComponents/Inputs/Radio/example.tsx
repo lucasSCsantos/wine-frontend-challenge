@@ -11,24 +11,24 @@ const Example: NextPage = () => {
     setSelect(value);
   };
   return (
-    <div>
+    <>
       <Radio
-        onChange={event => handleSelectChange(event)}
-        name="radio"
-        checked={select === 'foo'}
         value="foo"
+        checked={select === 'foo'}
+        name="radio"
+        onChange={event => handleSelectChange(event)}
       >
         foo
       </Radio>
       <Radio
-        onChange={event => handleSelectChange(event)}
         value="bar"
-        name="radio"
         checked={select === 'bar'}
+        name="radio"
+        onChange={event => handleSelectChange(event)}
       >
         bar
       </Radio>
-    </div>
+    </>
   );
 };
 

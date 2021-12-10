@@ -11,17 +11,16 @@ interface RadioProps {
   children: ReactNode;
 }
 
-const Radio: NextPage = ({
+const Radio: NextPage<RadioProps> = ({
   name,
   value,
   checked,
   onChange,
   children
-}: RadioProps) => (
+}) => (
   <div>
     <RadioRoot>
       <label htmlFor={name}>
-        {children}
         <RadioButton
           type="radio"
           onChange={onChange}
@@ -31,6 +30,7 @@ const Radio: NextPage = ({
           aria-checked={checked}
         />
         <RadioFill />
+        {children}
       </label>
     </RadioRoot>
   </div>
