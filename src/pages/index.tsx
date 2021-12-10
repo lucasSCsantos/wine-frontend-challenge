@@ -4,8 +4,8 @@ import { Button } from '../components/Buttons';
 const Home: NextPage = function () {
   return (
     <div>
-      <Button size="large" hover shadow fill disabled>
-        Loco
+      <Button size="mini" shadow hover circle>
+        +
       </Button>
     </div>
   );

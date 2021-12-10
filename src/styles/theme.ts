@@ -19,18 +19,27 @@ const theme = {
       light: '#888888'
     },
     functional: {
-      success: '#7EBC43',
-      successDark: '#5d8931'
+      success: {
+        default: '#7EBC43',
+        dark: '#5d8931',
+        disabled: '#94ba6f'
+      }
     },
     branding: {
-      tannat: '#B6116E',
-      tavel: '#F79552',
-      tavelLight: '#F9B950',
-      chenin: '#F26649'
+      tannat: { default: '#B6116E' },
+      tavel: {
+        default: '#F79552',
+        light: '#F9B950'
+      },
+      chenin: { default: '#F26649' }
     }
   },
   button: {
     size: {
+      mini: {
+        width: '24px',
+        height: '24px'
+      },
       smart: {
         width: '38px',
         height: '38px'
