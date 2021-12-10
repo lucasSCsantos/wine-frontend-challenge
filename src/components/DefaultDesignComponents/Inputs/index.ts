@@ -9,64 +9,7 @@ export type RadioProps = {
   hover?: boolean;
 };
 
-// export const Item = styled.div`
-//   display: flex;
-//   align-items: center;
-//   height: 48px;
-//   position: relative;
-// `;
-
-// export const RadioButtonLabel = styled.label`
-//   position: absolute;
-//   top: 25%;
-//   left: 4px;
-//   width: 24px;
-//   height: 24px;
-//   border-radius: 50%;
-//   background: white;
-//   border: 1px solid #bebebe;
-// `;
-// export const RadioButton = styled.input`
-//   opacity: 0;
-//   z-index: 1;
-//   border-radius: 50%;
-//   width: 24px;
-//   height: 24px;
-//   margin-right: 10px;
-
-//   &:hover ~ ${RadioButtonLabel} {
-//     background: #bebebe;
-//     &::after {
-//       content: '';
-//       display: block;
-//       border-radius: 50%;
-//       width: 12px;
-//       height: 12px;
-//       margin: 6px;
-//       background: #eeeeee;
-//     }
-//   }
-//   ${props =>
-//     props.checked &&
-//     `
-//     &:checked + ${RadioButtonLabel} {
-//       background: #db7290;
-//       border: 1px solid #db7290;
-//       &::after {
-//         content: "";
-//         display: block;
-//         border-radius: 50%;
-//         width: 12px;
-//         height: 12px;
-//         margin: 6px;
-//         box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
-//         background: white;
-//       }
-//     }
-//   `}
-// `;
-
-export const Root = styled.div`
+export const Radio = styled.div`
   margin: 5px;
   cursor: pointer;
   width: 20px;
@@ -90,7 +33,7 @@ export const Root = styled.div`
   }
 `;
 
-export const Fill = styled.div`
+export const RadioFill = styled.div`
   background: ${({ theme }) => theme.color.functional.tannat.default};
   width: 0;
   height: 0;
@@ -117,7 +60,7 @@ export const Fill = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const RadioButton = styled.input`
   opacity: 0;
   z-index: 2;
   position: absolute;
@@ -127,7 +70,7 @@ export const Input = styled.input`
   margin: 0;
   cursor: pointer;
 
-  &:hover ~ ${Fill} {
+  &:hover ~ ${RadioFill} {
     content: '';
     display: block;
     border-radius: 50%;
@@ -142,7 +85,7 @@ export const Input = styled.input`
   }
 
   &:checked {
-    & ~ ${Fill} {
+    & ~ ${RadioFill} {
       width: 10px;
       height: 10px;
       transition: width 0.2s ease-out, height 0.2s ease-out;

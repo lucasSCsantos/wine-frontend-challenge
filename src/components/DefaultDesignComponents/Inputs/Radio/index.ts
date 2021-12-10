@@ -1,112 +1,103 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export type RadioProps = {
-  type?: string;
-  checked?: boolean;
+  type: string;
 };
 
 export const Radio = styled.div`
-  display: flex;
-  align-items: center;
-  height: 48px;
-  position: relative;
-`;
-
-export const RadioButtonLabel = styled.label`
-  position: absolute;
-  top: 25%;
-  left: 4px;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  border: 2px solid #ccc;
-  background-color: #fff;
-`;
-export const RadioButton = styled.input<RadioProps>`
-  opacity: 0;
-  z-index: 1;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
   margin: 5px;
-  ${({ checked }) =>
-    checked &&
-    css`
-      & + ${RadioButtonLabel} {
-        transition: ease 0.2s;
-        border: 2px solid
-          ${({ theme }) => theme.color.functional.tannat.default};
-        &::after {
-          content: '';
-          display: block;
-          border-radius: 50%;
-          width: 12px;
-          height: 12px;
-          margin: 4px;
-          background: ${({ theme }) => theme.color.functional.tannat.default};
-          transform: scale(1);
-        }
-      }
-    `}
-  &:checked + ${RadioButtonLabel} {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  label {
+    margin-left: 25px;
+    cursor: pointer;
     transition: ease 0.2s;
-    border: 2px solid ${({ theme }) => theme.color.functional.tannat.default};
-    &::after {
-      content: '';
-      display: block;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      margin: 4px;
-      background: ${({ theme }) => theme.color.functional.tannat.default};
-      transform: scale(1);
-    }
-  }
-
-  & ~ ${RadioButtonLabel} {
-    &::after {
-      content: '';
-      display: block;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      margin: 4px;
-      background: ${({ theme }) => theme.color.functional.tannat.default};
-      transform: scale(0);
-    }
-  }
-
-  &:hover ~ ${RadioButtonLabel} {
-    background: #ffff;
-    &::after {
-      content: '';
-      display: block;
-      border-radius: 50%;
-      width: 12px;
-      height: 12px;
-      margin: 4px;
-      background: ${({ theme }) => theme.color.functional.tannat.default};
+    &:hover {
+      color: ${({ theme }) => theme.color.functional.tannat.default};
       transition: ease 0.2s;
-      transform: scale(1);
     }
   }
-  /* ${props =>
-    props.checked &&
-    css`
-      &:checked + ${RadioButtonLabel} {
-        transition: ease 0.2s;
+  &::before {
+    content: '';
+    border-radius: 100%;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 0;
+  }
+`;
+
+export const RadioFill = styled.div`
+  background: ${({ theme }) => theme.color.functional.tannat.default};
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease-in, height 0.2s ease-in;
+  pointer-events: none;
+  z-index: 1;
+  &::before {
+    content: '';
+    /* opacity: 1; */
+    width: 16px;
+    position: absolute;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid ${({ theme }) => theme.color.gray.light};
+    border-radius: 100%;
+    opacity: 0.2;
+  }
+`;
+
+export const RadioButton = styled.input.attrs<RadioProps>(() => ({
+  type: 'radio'
+}))<RadioProps>`
+  opacity: 0;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+
+  &:hover ~ ${RadioFill} {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background: ${({ theme }) => theme.color.functional.tannat.default}33;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:checked {
+    & ~ ${RadioFill} {
+      width: 10px;
+      height: 10px;
+      transition: width 0.2s ease-out, height 0.2s ease-out;
+
+      &::before {
         border: 2px solid
           ${({ theme }) => theme.color.functional.tannat.default};
-        &::after {
-          content: '';
-          display: block;
-          border-radius: 50%;
-          width: 12px;
-          height: 12px;
-          margin: 4px;
-          background: ${({ theme }) => theme.color.functional.tannat.default};
-          transform: scale(1);
-        }
+        transition: opacity 1s ease;
+        opacity: 1;
       }
-    `} */
+    }
+  }
 `;

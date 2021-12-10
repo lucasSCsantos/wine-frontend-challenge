@@ -1,52 +1,39 @@
 import type { NextPage } from 'next';
-import { useState } from 'react';
-import { RadioButton, RadioButtonLabel, Radio } from '.';
+import { ReactNode } from 'react';
+import { RadioButton, RadioFill, Radio } from '.';
 
 // COMPONENTE EXEMPLO PARA O RADIO BUTTON LOGIC
+interface RadioProps {
+  name: string;
+  value: string;
+  checked: boolean;
+  onChange: (event: any) => void;
+  children: ReactNode;
+}
 
-const RadioExample: NextPage = () => {
-  const [select, setSelect] = useState('betterPriceOnly');
-  const handleSelectChange = event => {
-    const { value } = event.target;
-    setSelect(value);
-  };
-  return (
-    <div>
-      <Radio>
+const RadioExample: NextPage = ({
+  name,
+  value,
+  checked,
+  onChange,
+  children
+}: RadioProps) => (
+  <div>
+    <Radio>
+      <label htmlFor={name}>
+        {children}
         <RadioButton
           type="radio"
-          name="radio"
-          value="betterPriceOnly"
-          checked={select === 'betterPriceOnly'}
-          onChange={event => handleSelectChange(event)}
+          onChange={onChange}
+          name={name}
+          value={value}
+          checked={checked}
+          aria-checked={checked}
         />
-        <RadioButtonLabel />
-        <div>Auto accept better price only</div>
-      </Radio>
-      <Radio>
-        <RadioButton
-          type="radio"
-          name="radio"
-          value="anyPriceChange"
-          checked={select === 'anyPriceChange'}
-          onChange={event => handleSelectChange(event)}
-        />
-        <RadioButtonLabel />
-        <div>Auto accept any price change</div>
-      </Radio>
-      <Radio>
-        <RadioButton
-          type="radio"
-          name="radio"
-          value="neverAutoAccept"
-          checked={select === 'neverAutoAccept'}
-          onChange={event => handleSelectChange(event)}
-        />
-        <RadioButtonLabel />
-        <div>Never auto accept a price change</div>
-      </Radio>
-    </div>
-  );
-};
+        <RadioFill />
+      </label>
+    </Radio>
+  </div>
+);
 
 export default RadioExample;
