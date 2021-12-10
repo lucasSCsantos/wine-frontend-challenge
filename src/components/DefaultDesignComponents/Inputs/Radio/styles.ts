@@ -4,7 +4,7 @@ export type RadioProps = {
   type: string;
 };
 
-export const Radio = styled.div`
+export const RadioRoot = styled.div`
   margin: 5px;
   cursor: pointer;
   width: 20px;
@@ -14,6 +14,8 @@ export const Radio = styled.div`
     margin-left: 25px;
     cursor: pointer;
     transition: ease 0.2s;
+    font-size: 14px;
+    font-family: 'Lato';
     &:hover {
       color: ${({ theme }) => theme.color.functional.tannat.default};
       transition: ease 0.2s;

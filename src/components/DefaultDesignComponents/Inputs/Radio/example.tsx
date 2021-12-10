@@ -1,39 +1,35 @@
 import type { NextPage } from 'next';
-import { ReactNode } from 'react';
-import { RadioButton, RadioFill, Radio } from '.';
+import { useState } from 'react';
+import Radio from '.';
 
 // COMPONENTE EXEMPLO PARA O RADIO BUTTON LOGIC
-interface RadioProps {
-  name: string;
-  value: string;
-  checked: boolean;
-  onChange: (event: any) => void;
-  children: ReactNode;
-}
 
-const RadioExample: NextPage = ({
-  name,
-  value,
-  checked,
-  onChange,
-  children
-}: RadioProps) => (
-  <div>
-    <Radio>
-      <label htmlFor={name}>
-        {children}
-        <RadioButton
-          type="radio"
-          onChange={onChange}
-          name={name}
-          value={value}
-          checked={checked}
-          aria-checked={checked}
-        />
-        <RadioFill />
-      </label>
-    </Radio>
-  </div>
-);
+const Example: NextPage = () => {
+  const [select, setSelect] = useState('');
+  const handleSelectChange = event => {
+    const { value } = event.target;
+    setSelect(value);
+  };
+  return (
+    <div>
+      <Radio
+        onChange={event => handleSelectChange(event)}
+        name="radio"
+        checked={select === 'foo'}
+        value="foo"
+      >
+        foo
+      </Radio>
+      <Radio
+        onChange={event => handleSelectChange(event)}
+        value="bar"
+        name="radio"
+        checked={select === 'bar'}
+      >
+        bar
+      </Radio>
+    </div>
+  );
+};
 
-export default RadioExample;
+export default Example;
