@@ -1,5 +1,5 @@
-import styled, { css } from "styled-components";
-import theme from "../../styles/theme";
+import styled, { css } from 'styled-components';
+import theme from '../../styles/theme';
 
 const { color, font } = theme;
 
@@ -11,37 +11,59 @@ export type HeadingProps = {
   level?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
-export const Heading = styled("h1").attrs<HeadingProps>(({ level = 1 }) => ({
-  as: `h${level}`,
+export const Heading = styled('h1').attrs<HeadingProps>(({ level = 1 }) => ({
+  as: `h${level}`
 }))<HeadingProps>`
-  ${({ type = "default", size, weight = "bold", lineHeight = 20 }) => css`
+  ${({ type = 'default', size, weight = 'bold', lineHeight = 20 }) => css`
     font-size: ${font.size[size]};
     color: ${color.text[type]};
     font-weight: ${font.weight[weight]};
     line-height: ${lineHeight}px;
     z-index: 10;
-    font-family: "Neo Sans Std Regular";
+    font-family: 'Neo Sans Std Regular';
   `}
 `;
 
-export type TextProps = {
+export type ParagraphProps = {
   type?: keyof typeof color.text;
   size?: keyof typeof font.size;
   weight?: keyof typeof font.weight;
   lineHeight?: string | number;
 };
 
-export const Text = styled("p")<TextProps>`
+export const Paragraph = styled('p')<ParagraphProps>`
   ${({
-    type = "text",
-    size = "medium",
-    weight = "normal",
-    lineHeight = 20,
+    type = 'text',
+    size = 'medium',
+    weight = 'normal',
+    lineHeight = 20
   }) => css`
     font-size: ${font.size[size]};
     color: ${color.text[type]};
     font-weight: ${font.weight[weight]};
     line-height: ${lineHeight}px;
-    font-family: "Lato";
+    font-family: 'Lato';
+  `}
+`;
+
+export type SmallParagraphProps = {
+  type?: keyof typeof color.text;
+  size?: keyof typeof font.size;
+  weight?: keyof typeof font.weight;
+  lineHeight?: string | number;
+};
+
+export const SmallParagraph = styled('small')<ParagraphProps>`
+  ${({
+    type = 'text',
+    size = 'xSmall',
+    weight = 'normal',
+    lineHeight = 20
+  }) => css`
+    font-size: ${font.size[size]};
+    color: ${color.text[type]};
+    font-weight: ${font.weight[weight]};
+    line-height: ${lineHeight}px;
+    font-family: 'Lato';
   `}
 `;
