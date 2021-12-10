@@ -33,7 +33,7 @@ export const Button = styled('button')<ButtonProps>`
               hover &&
               css`
                 &:hover {
-                  background-color: ${color.functional[type].dark};
+                  background-color: ${color.functional[type].hover};
                   transition: 0.5s ease;
                 }
               `};

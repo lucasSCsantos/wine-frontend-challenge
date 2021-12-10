@@ -21,8 +21,13 @@ const theme = {
     functional: {
       success: {
         default: '#7EBC43',
-        dark: '#5d8931',
+        hover: '#5d8931',
         disabled: '#94ba6f'
+      },
+      tannat: {
+        default: '#B6116E',
+        disabled: '#b55188',
+        hover: '#990f5b'
       }
     },
     branding: {
