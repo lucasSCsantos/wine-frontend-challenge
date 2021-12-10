@@ -1,7 +1,13 @@
 const theme = {
   color: {
     background: "#DEDEDE",
-    text: "#1D1D1B",
+    text: {
+      default: "#1D1D1B",
+      gray: "#555555",
+      grayDark: "#111111",
+      grayLight: "#888888",
+      tannat: "#B6116E",
+    },
     structure: {
       white: "#ffffff",
       black: "#000000",
@@ -32,6 +38,13 @@ const theme = {
       xLarge: "24px",
       xxLarge: "28px",
       giant: "30px",
+    },
+    family: {
+      lato: "lato",
+      sansSerif: "sans-serif",
+      saira: "saira",
+      openSans: "open-sans",
+      neoSans: "Neo Sans Std Regular",
     },
     width: {
       light: 300,

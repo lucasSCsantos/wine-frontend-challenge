@@ -9,7 +9,6 @@ export default createGlobalStyle`
 
   body {
 		background-color: ${({ theme }) => theme.color.background};
-    font: 400 16px 'Lato', sans-serif;
   }
 
   img {
