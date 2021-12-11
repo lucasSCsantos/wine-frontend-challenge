@@ -2,7 +2,7 @@ const theme = {
   color: {
     background: '#DEDEDE',
     text: {
-      default: '#1D1D1B',
+      text: '#1D1D1B',
       gray: '#555555',
       grayDark: '#111111',
       grayLight: '#888888',
@@ -62,6 +62,7 @@ const theme = {
   font: {
     size: {
       mini: '10px',
+      xxxSmall: '11px',
       xxSmall: '12px',
       xSmall: '14px',
       small: '16px',
@@ -69,7 +70,8 @@ const theme = {
       large: '20px',
       xLarge: '24px',
       xxLarge: '28px',
-      giant: '30px'
+      xxxLarge: '30px',
+      giant: '32px'
     },
     family: {
       lato: 'lato',
@@ -82,7 +84,8 @@ const theme = {
       light: 300,
       regular: 400,
       semiBold: 600,
-      bold: 700
+      bold: 700,
+      black: 900
     }
   },
   breakpoint: {

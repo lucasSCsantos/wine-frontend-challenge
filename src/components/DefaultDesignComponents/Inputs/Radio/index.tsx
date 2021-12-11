@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import { ReactNode } from 'react';
 import { RadioButton, RadioFill, RadioRoot } from './styles';
 
-// COMPONENTE EXEMPLO PARA O RADIO BUTTON LOGIC
 interface RadioProps {
   name: string;
   value: string;

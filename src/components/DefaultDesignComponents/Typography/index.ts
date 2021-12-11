@@ -33,7 +33,7 @@ export type ParagraphProps = {
 
 export const Paragraph = styled('p')<ParagraphProps>`
   ${({
-    type = 'text',
+    type = 'default',
     size = 'medium',
     weight = 'normal',
     lineHeight = 20
@@ -55,7 +55,7 @@ export type SmallParagraphProps = {
 
 export const SmallParagraph = styled('small')<ParagraphProps>`
   ${({
-    type = 'text',
+    type = 'default',
     size = 'xSmall',
     weight = 'normal',
     lineHeight = 20
