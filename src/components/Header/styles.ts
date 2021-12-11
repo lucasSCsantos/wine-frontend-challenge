@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export type NavProps = {
+  text?: boolean;
+  icon?: boolean;
+};
 
 export const Container = styled.header`
   display: flex;
@@ -14,17 +19,36 @@ export const Container = styled.header`
     display: flex;
     width: 62.5%;
     align-items: center;
+    justify-content: space-between;
   }
 `;
 
-export const Nav = styled.ul`
+export const Nav = styled.ul<NavProps>`
+  ${({ icon, text }) => css`
+    ${() =>
+      icon &&
+      css`
+        li {
+          margin-left: 42px;
+        }
+      `}
+    ${() =>
+      text &&
+      css`
+        li {
+          margin-right: 48px;
+        }
+      `}
+  `}
   display: flex;
   margin-left: 84px;
-  width: 480px;
   align-items: center;
-  justify-content: space-between;
 `;
 
-export const NavLinkContainer = styled.div`
+export const NavLinkContainer = styled.li`
+  img {
+    width: 56px;
+    height: 56px;
+  }
   cursor: pointer;
 `;
