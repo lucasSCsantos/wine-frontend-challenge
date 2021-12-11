@@ -12,6 +12,8 @@ export const Container = styled.header`
   height: 88px;
   background-color: ${({ theme }) => theme.color.structure.white};
   border-bottom: 0.5px #cccccc solid;
+  border-top: 0.5px #cccccc solid;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
   img {
     width: 100px;
     margin: 0;
@@ -52,12 +54,20 @@ export const Nav = styled.ul<NavProps>`
       css`
         li {
           margin-right: 48px;
+          &:hover {
+            h3 {
+              color: ${({ theme }) => theme.color.text.tannat} !important;
+              transition: 0.2s ease;
+            }
+            border-bottom: 2px solid ${({ theme }) => theme.color.text.tannat};
+          }
         }
       `}
   `}
   display: flex;
   margin-left: 84px;
   align-items: center;
+  height: 100%;
 `;
 
 export const NavLinkContainer = styled.li`
@@ -65,5 +75,9 @@ export const NavLinkContainer = styled.li`
     width: 56px;
     height: 56px;
   }
+  display: flex;
+  align-items: center;
+  height: 100%;
   cursor: pointer;
+  border-bottom: 2px solid ${({ theme }) => theme.color.structure.transparent};
 `;
