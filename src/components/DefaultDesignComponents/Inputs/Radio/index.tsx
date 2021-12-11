@@ -20,6 +20,7 @@ const Radio: NextPage<RadioProps> = ({
   <div>
     <RadioRoot>
       <label htmlFor={name}>
+        <p>{children}</p>
         <RadioButton
           type="radio"
           onChange={onChange}
@@ -29,7 +30,6 @@ const Radio: NextPage<RadioProps> = ({
           aria-checked={checked}
         />
         <RadioFill />
-        {children}
       </label>
     </RadioRoot>
   </div>
