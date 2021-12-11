@@ -24,11 +24,9 @@ function Header() {
           <NavLink>Produtores</NavLink>
           <NavLink>Ofertas</NavLink>
           <NavLink>Eventos</NavLink>
-          {/* Este elemento não aparece por default */}
           <NavLink className="profile-mobile">
             <img src={profile} alt="profile" />
           </NavLink>
-          {/* Este elemento não aparece por default */}
         </Nav>
         <Nav icon>
           <NavLink>
