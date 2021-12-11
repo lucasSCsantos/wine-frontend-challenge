@@ -1,8 +1,7 @@
 import { base } from '../../../../__mocks__/base';
-import { Button } from '../../../DefaultDesignComponents/Buttons';
 import { SmallParagraph } from '../../../DefaultDesignComponents/Typography';
 import Product from './Product';
-import { Container } from './styles';
+import { Container, ProductsContainer } from './styles';
 
 function Products() {
   const api = base;
@@ -12,14 +11,12 @@ function Products() {
         {api.totalItems}
         {`${' produtos encontrados'}`}
       </SmallParagraph>
-      {api.items.map(item => (
-        <>
+      <ProductsContainer>
+        {api.items.map(item => (
           <Product item={item} />
-          <Button fill color="success" size="large">
-            Adicionar
-          </Button>
-        </>
-      ))}
+        ))}
+      </ProductsContainer>
+      {/* Component de paginação */}
     </Container>
   );
 }

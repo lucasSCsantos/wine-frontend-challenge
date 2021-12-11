@@ -5,20 +5,32 @@ export type ImageProps = {
 };
 
 export const Container = styled.div`
-  background-color: pink;
   height: inherit;
-  width: 78%;
+  width: 69%;
+  padding: 38px 0 44px 0;
+`;
+
+export const ProductsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
 `;
 
 export const ProductContainer = styled.div`
-  background-color: white;
-  width: 256px;
-  height: 333px;
-  box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 30px;
+  .product-card {
+    box-shadow: 0px 9.73384px 14.6008px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    width: 256px;
+    height: 333px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+  }
   img {
     /* height: 178.1292724609375px; */
     width: 191px;
