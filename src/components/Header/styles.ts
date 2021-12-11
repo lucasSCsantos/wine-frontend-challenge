@@ -18,11 +18,26 @@ export const Container = styled.header`
     width: 100px;
     margin: 0;
   }
+  .menu {
+    img {
+      width: 21px;
+      height: 21px;
+    }
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+  }
+
   .content {
     display: flex;
     width: 62.5%;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .active {
+    transform: translateX(0);
+    transition: 0.5s ease;
   }
 
   ${({ theme }) => css`
@@ -34,6 +49,12 @@ export const Container = styled.header`
     @media (max-width: ${theme.breakpoint.laptop}) {
     }
     @media (max-width: ${theme.breakpoint.tablet}) {
+      .content {
+        width: 90%;
+      }
+      .menu {
+        display: block;
+      }
     }
     @media (max-width: ${theme.breakpoint.mobile}) {
     }
@@ -62,6 +83,28 @@ export const Nav = styled.ul<NavProps>`
             border-bottom: 2px solid ${({ theme }) => theme.color.text.tannat};
           }
         }
+        ${({ theme }) => css`
+          @media (max-width: ${theme.breakpoint.desktop}) {
+          }
+          @media (max-width: ${theme.breakpoint.laptop}) {
+          }
+          @media (max-width: ${theme.breakpoint.tablet}) {
+            position: absolute;
+            top: 88px;
+            width: 50vw;
+            height: 92vh;
+            margin-left: 0;
+            background-color: ${theme.color.structure.white};
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            left: 0;
+            transform: translateX(-100%);
+            transition: 0.5s ease;
+          }
+          @media (max-width: ${theme.breakpoint.mobile}) {
+          }
+        `}
       `}
   `}
   display: flex;

@@ -4,13 +4,19 @@ import logo from '../images/black.svg';
 import box from '../images/winebox.svg';
 import search from '../images/search.svg';
 import profile from '../images/profile.svg';
+import menu from '../images/menu.svg';
 
 // interface HeaderProps {}
 
 function Header() {
+  const openMenu = ({ target }) =>
+    target.parentNode.nextSibling.nextSibling.classList.toggle('active');
   return (
     <Container>
       <div className="content">
+        <div className="menu" onClick={openMenu} aria-hidden="true">
+          <img src={menu} alt="menu" />
+        </div>
         <a href="/">
           <img src={logo} alt="logo" />
         </a>
