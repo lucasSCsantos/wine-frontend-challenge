@@ -3,6 +3,7 @@ import { Container, Nav } from './styles';
 import logo from '../images/black.svg';
 import box from '../images/winebox.svg';
 import search from '../images/search.svg';
+import profile from '../images/profile.svg';
 
 // interface HeaderProps {}
 
@@ -25,7 +26,7 @@ function Header() {
             <img src={search} alt="search" />
           </NavLink>
           <NavLink>
-            <img src={search} alt="search" />
+            <img src={profile} alt="profile" />
           </NavLink>
           <NavLink>
             <img src={box} alt="winebox" />

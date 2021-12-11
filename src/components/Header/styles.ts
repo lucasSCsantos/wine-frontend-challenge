@@ -11,6 +11,7 @@ export const Container = styled.header`
   width: 100vw;
   height: 88px;
   background-color: ${({ theme }) => theme.color.structure.white};
+  border-bottom: 0.5px #cccccc solid;
   img {
     width: 100px;
     margin: 0;
@@ -21,6 +22,20 @@ export const Container = styled.header`
     align-items: center;
     justify-content: space-between;
   }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.desktop}) {
+      .content {
+        width: 80%;
+      }
+    }
+    @media (max-width: ${theme.breakpoint.laptop}) {
+    }
+    @media (max-width: ${theme.breakpoint.tablet}) {
+    }
+    @media (max-width: ${theme.breakpoint.mobile}) {
+    }
+  `}
 `;
 
 export const Nav = styled.ul<NavProps>`
