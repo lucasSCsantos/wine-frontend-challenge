@@ -66,7 +66,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link rel="icon" href="https://rocketseat.com.br/favicon.ico" />
+          <link
+            rel="icon"
+            href="https://img.wine.com.br/fenix/image/_big_bang/icons/favicon/favicon.ico"
+          />
 
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
