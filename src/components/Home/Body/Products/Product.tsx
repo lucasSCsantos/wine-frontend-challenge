@@ -19,7 +19,7 @@ const Product: NextPage<ProductProps> = ({ item }) => (
       <Paragraph size="small" weight="bold">
         {item.name}
       </Paragraph>
-      <SmallParagraph size="xxxSmall" type="grayLight">
+      <SmallParagraph size="xxxSmall" type="grayLight" decoration="overline">
         R${item.priceNonMember.toFixed(2)}
       </SmallParagraph>
       <SmallParagraph size="mini" type="gray">

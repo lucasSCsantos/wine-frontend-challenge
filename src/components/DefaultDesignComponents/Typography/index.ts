@@ -1,4 +1,4 @@
-import styled, { css, CSSObject } from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from '../../../styles/theme';
 
 const { color, font } = theme;
@@ -54,7 +54,7 @@ export type SmallParagraphProps = {
   size?: keyof typeof font.size;
   weight?: keyof typeof font.weight;
   lineHeight?: string | number;
-  style?: string;
+  decoration?: string;
 };
 
 export const SmallParagraph = styled('small')<SmallParagraphProps>`
@@ -63,13 +63,13 @@ export const SmallParagraph = styled('small')<SmallParagraphProps>`
     size = 'xSmall',
     weight = 'normal',
     lineHeight = 20,
-    style
+    decoration = 'unset'
   }) => css`
     font-size: ${font.size[size]};
     color: ${color.text[type]};
     font-weight: ${font.weight[weight]};
     line-height: ${lineHeight}px;
     font-family: 'Lato';
-    text-decoration: ${style};
+    text-decoration: ${decoration};
   `}
 `;
