@@ -1,10 +1,10 @@
 import NavLink from './NavLink';
 import { Container, Nav } from './styles';
-import logo from '../images/black.svg';
-import box from '../images/winebox.svg';
-import search from '../images/search.svg';
-import profile from '../images/profile.svg';
-import menu from '../images/menu.svg';
+import logo from '../../images/black.svg';
+import box from '../../images/winebox.svg';
+import search from '../../images/search.svg';
+import profile from '../../images/profile.svg';
+import menu from '../../images/menu.svg';
 
 function Header() {
   const openMenu = ({ target }) =>
