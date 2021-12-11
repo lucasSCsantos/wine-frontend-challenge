@@ -1,4 +1,4 @@
-export default {
+export const base = {
   page: 1,
   totalPages: 7,
   itemsPerPage: 10,
@@ -205,4 +205,23 @@ export default {
         'Colección de Familia La Mateo 2015 foi elaborado a partir de uma rigorosa seleção das variedades tempranillo, garnacha e graciano, todas escolhidas a dedo em El Salobral, o vinhedo mais emblemático da vinícola, com orientação norte-sul e solos argilosos e calcários. O vinho é produzido a partir da fermentação malolática em barris novos de 225 litros, pós é submetido a um processo de envelhecimento de 14 meses em barricas de carvalho francês Allier, Nevers, Tronçaise & Jupilles (85%) e americano da Pensilvânia (15%). Para preservar aromas e sabores, foi engarrafado sem filtrar, envelhecendo por mais 18 meses engarrafado, antes de ir à venda.'
     }
   ]
+};
+
+export type BaseProps = {
+  id: number;
+  image: string;
+  name: string;
+  price: number;
+  discount: number;
+  priceMember: number;
+  priceNonMember: number;
+  type: string;
+  classification: string;
+  volume: string;
+  rating: number;
+  avaliations: number;
+  country: string;
+  region: string;
+  flag: string;
+  sommelierComment: string;
 };
