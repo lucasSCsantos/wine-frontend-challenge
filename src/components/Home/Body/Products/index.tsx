@@ -11,6 +11,7 @@ function Products() {
         {api.totalItems}
         {`${' produtos encontrados'}`}
       </SmallParagraph>
+      <hr />
       <ProductsContainer>
         {api.items.map(item => (
           <Product item={item} />

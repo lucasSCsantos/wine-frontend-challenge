@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   height: inherit;
@@ -11,6 +11,11 @@ export const Container = styled.div`
   p {
     margin-bottom: 16px;
   }
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      display: none;
+    }
+  `}
 `;
 
 export const FilterContainer = styled.div`

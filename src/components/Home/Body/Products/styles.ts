@@ -8,6 +8,19 @@ export const Container = styled.div`
   height: inherit;
   width: 69%;
   padding: 38px 0 44px 0;
+  hr {
+    display: none;
+    margin-top: 20px;
+  }
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      width: 90%;
+      hr {
+        display: block;
+        border-top: 0.5px solid ${theme.color.gray.light};
+      }
+    }
+  `}
 `;
 
 export const ProductsContainer = styled.div`
@@ -31,6 +44,14 @@ export const ProductContainer = styled.div`
     align-items: center;
     margin-bottom: 16px;
     padding: 10px 0 21px 0;
+    ${({ theme }) => css`
+      @media (max-width: ${theme.breakpoint.laptop}) {
+        width: 156px;
+        p {
+          font-size: 14px;
+        }
+      }
+    `}
   }
   .price-nom-member {
     width: 100px;
@@ -47,6 +68,13 @@ export const ProductContainer = styled.div`
   img {
     /* height: 178.1292724609375px; */
     width: 191px;
+  }
+  button {
+    ${({ theme }) => css`
+      @media (max-width: ${theme.breakpoint.laptop}) {
+        width: 156px;
+      }
+    `}
   }
 `;
 
