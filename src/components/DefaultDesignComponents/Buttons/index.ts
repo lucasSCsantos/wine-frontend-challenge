@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
 import theme from '../../../styles/theme';
 
-const { color, font, button } = theme;
+const { color: buttonColor, font, button } = theme;
+const { functional } = buttonColor;
 
 export type ButtonProps = {
-  type?: keyof typeof color.functional;
+  color?: keyof typeof functional;
   weight?: keyof typeof font.weight;
   size?: keyof typeof button.size;
   fill?: boolean;
@@ -13,48 +14,50 @@ export type ButtonProps = {
   circle?: boolean;
 };
 
-export const Button = styled('button')<ButtonProps>`
+export const Button = styled('button').attrs<ButtonProps>(() => ({
+  type: 'button'
+}))<ButtonProps>`
   ${({
-    type = 'success',
     fill,
     weight = 400,
     hover,
     size = 'medium',
     shadow,
-    circle
+    circle,
+    color
   }) => css`
     ${() =>
       fill
         ? css`
-            background-color: ${color.functional[type].default};
+            background-color: ${functional[color].default};
             border: none;
-            color: ${color.structure.white};
+            color: ${theme.color.structure.white};
             ${() =>
               hover &&
               css`
                 &:hover {
-                  background-color: ${color.functional[type].hover};
+                  background-color: ${functional[color].hover};
                   transition: 0.5s ease;
                 }
               `};
           `
         : css`
-            background-color: ${color.structure.transparent};
-            border: 1px solid ${color.functional[type].default};
-            color: ${color.functional[type].default};
+            background-color: ${theme.color.structure.transparent};
+            border: 1px solid ${functional[color].default};
+            color: ${functional[color].default};
             ${() =>
               hover &&
               css`
                 &:hover {
-                  background-color: ${color.functional[type].default};
-                  color: ${color.structure.white};
+                  background-color: ${functional[color].default};
+                  color: ${theme.color.structure.white};
                   border: none;
                   transition: 0.5s ease;
                 }
               `}
           `};
     &:disabled {
-      background-color: ${color.functional[type].disabled};
+      background-color: ${functional[color].disabled};
       cursor: default;
     }
     width: ${button.size[size].width};

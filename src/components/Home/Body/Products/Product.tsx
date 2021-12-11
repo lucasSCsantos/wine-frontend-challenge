@@ -26,7 +26,7 @@ const Product: NextPage<ProductProps> = ({ item }) => (
     <Paragraph size="xxxSmall" type="text">
       SÓCIO WINE
     </Paragraph>
-    <Price value={item.priceMember} size="xxSmall" />;
+    <Price value={item.priceMember} size="xxSmall" />
     <SmallParagraph size="xxSmall" type="grayLight">
       NÃO SÓCIO R${item.priceNonMember.toFixed(2)}
     </SmallParagraph>

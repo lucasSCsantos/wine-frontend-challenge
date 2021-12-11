@@ -29,6 +29,7 @@ export type ParagraphProps = {
   size?: keyof typeof font.size;
   weight?: keyof typeof font.weight;
   lineHeight?: string | number;
+  align?: string;
 };
 
 export const Paragraph = styled('p')<ParagraphProps>`
@@ -36,8 +37,10 @@ export const Paragraph = styled('p')<ParagraphProps>`
     type = 'default',
     size = 'medium',
     weight = 'normal',
-    lineHeight = 20
+    lineHeight = 20,
+    align = 'center'
   }) => css`
+    text-align: ${align};
     font-size: ${font.size[size]};
     color: ${color.text[type]};
     font-weight: ${font.weight[weight]};

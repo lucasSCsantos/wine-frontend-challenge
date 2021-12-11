@@ -1,4 +1,5 @@
 import { base } from '../../../../__mocks__/base';
+import { Button } from '../../../DefaultDesignComponents/Buttons';
 import { SmallParagraph } from '../../../DefaultDesignComponents/Typography';
 import Product from './Product';
 import { Container } from './styles';
@@ -12,7 +13,12 @@ function Products() {
         {`${' produtos encontrados'}`}
       </SmallParagraph>
       {api.items.map(item => (
-        <Product item={item} />
+        <>
+          <Product item={item} />
+          <Button fill color="success" size="large">
+            Adicionar
+          </Button>
+        </>
       ))}
     </Container>
   );
