@@ -19,21 +19,29 @@ const Product: NextPage<ProductProps> = ({ item }) => (
       <Paragraph size="small" weight="bold">
         {item.name}
       </Paragraph>
-      <SmallParagraph size="xxxSmall" type="grayLight" decoration="overline">
-        R${item.priceNonMember.toFixed(2)}
-      </SmallParagraph>
-      <SmallParagraph size="mini" type="gray">
-        {item.discount}% OFF
-      </SmallParagraph>
-      <Paragraph size="xxxSmall" type="text">
-        SÓCIO WINE
-      </Paragraph>
-      <Price value={item.priceMember} size="xxSmall" />
+      <div className="price-nom-member">
+        <SmallParagraph
+          size="xxxSmall"
+          type="grayLight"
+          decoration="line-through"
+        >
+          R${item.priceNonMember.toFixed(2)}
+        </SmallParagraph>
+        <SmallParagraph size="mini" type="gray" filled>
+          {item.discount}% OFF
+        </SmallParagraph>
+      </div>
+      <div className="price-member">
+        <Paragraph size="xxxSmall" type="text" weight="bold">
+          SÓCIO WINE
+        </Paragraph>
+        <Price value={item.priceMember} size="xxSmall" />
+      </div>
       <SmallParagraph size="xxSmall" type="grayLight">
         NÃO SÓCIO R${item.priceNonMember.toFixed(2)}
       </SmallParagraph>
     </div>
-    <Button fill color="success" size="large">
+    <Button filled color="success" size="large">
       Adicionar
     </Button>
   </ProductContainer>

@@ -26,10 +26,23 @@ export const ProductContainer = styled.div`
     width: 256px;
     height: 333px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     align-items: center;
     margin-bottom: 16px;
+    padding: 10px 0 21px 0;
+  }
+  .price-nom-member {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price-member {
+    width: 142px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
   }
   img {
     /* height: 178.1292724609375px; */

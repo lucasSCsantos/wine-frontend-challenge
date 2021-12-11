@@ -8,7 +8,7 @@ export type ButtonProps = {
   color?: keyof typeof functional;
   weight?: keyof typeof font.weight;
   size?: keyof typeof button.size;
-  fill?: boolean;
+  filled?: boolean;
   hover?: boolean;
   shadow?: boolean;
   circle?: boolean;
@@ -18,7 +18,7 @@ export const Button = styled('button').attrs<ButtonProps>(() => ({
   type: 'button'
 }))<ButtonProps>`
   ${({
-    fill,
+    filled,
     weight = 400,
     hover,
     size = 'medium',
@@ -27,7 +27,7 @@ export const Button = styled('button').attrs<ButtonProps>(() => ({
     color
   }) => css`
     ${() =>
-      fill
+      filled
         ? css`
             background-color: ${functional[color].default};
             border: none;
