@@ -32,6 +32,7 @@
     "prettier/prettier": "error",
     "space-before-function-paren": "off",
     "react/prop-types": "off",
-    "@typescript-eslint/default-param-last": "off"
+    "@typescript-eslint/default-param-last": "off",
+    "react/function-component-definition": "off"
   }
 }

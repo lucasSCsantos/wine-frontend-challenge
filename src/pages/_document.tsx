@@ -4,9 +4,9 @@ import Document, {
   Html,
   Head,
   Main,
-  NextScript,
-} from "next/document";
-import { ServerStyleSheet } from "styled-components";
+  NextScript
+} from 'next/document';
+import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
   static async getInitialProps(
@@ -18,8 +18,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
         });
 
       const initialProps = await Document.getInitialProps(ctx);
@@ -30,7 +29,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        )
       };
     } finally {
       sheet.seal();
@@ -49,7 +48,7 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
             rel="stylesheet"
           />
 
@@ -67,7 +66,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link rel="icon" href="https://rocketseat.com.br/favicon.ico" />
+          <link
+            rel="icon"
+            href="https://img.wine.com.br/fenix/image/_big_bang/icons/favicon/favicon.ico"
+          />
 
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

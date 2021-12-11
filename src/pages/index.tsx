@@ -1,11 +1,5 @@
-import type { NextPage } from "next";
+import type { NextPage } from 'next';
 
-const Home: NextPage = function () {
-  return (
-    <div>
-      <p>WINE</p>
-    </div>
-  );
-};
+const Home: NextPage = () => <div />;
 
 export default Home;
