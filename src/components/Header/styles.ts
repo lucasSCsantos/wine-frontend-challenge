@@ -18,19 +18,25 @@ export const Container = styled.header`
     width: 100px;
     margin: 0;
   }
-  .menu {
-    img {
-      width: 21px;
-      height: 21px;
-    }
-    margin-right: 20px;
+  .menu,
+  .profile-mobile {
     cursor: pointer;
     display: none;
   }
 
+  .profile-mobile img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .menu img {
+    width: 21px;
+    height: 21px;
+  }
+
   .content {
     display: flex;
-    width: 62.5%;
+    width: 1200px;
     align-items: center;
     justify-content: space-between;
   }
@@ -41,22 +47,22 @@ export const Container = styled.header`
   }
 
   ${({ theme }) => css`
-    @media (max-width: ${theme.breakpoint.desktop}) {
-      .content {
-        width: 80%;
-      }
-    }
     @media (max-width: ${theme.breakpoint.laptop}) {
-    }
-    @media (max-width: ${theme.breakpoint.tablet}) {
       .content {
-        width: 90%;
+        padding: 10px;
+        justify-content: space-between;
       }
-      .menu {
+      .menu,
+      .profile-mobile {
         display: block;
       }
-    }
-    @media (max-width: ${theme.breakpoint.mobile}) {
+      .logo {
+        position: absolute;
+        left: 58px;
+      }
+      .profile {
+        display: none;
+      }
     }
   `}
 `;
@@ -69,6 +75,13 @@ export const Nav = styled.ul<NavProps>`
         li {
           margin-left: 42px;
         }
+        ${({ theme }) => css`
+          @media (max-width: ${theme.breakpoint.laptop}) {
+            li {
+              margin-left: 20px;
+            }
+          }
+        `}
       `}
     ${() =>
       text &&
@@ -77,18 +90,14 @@ export const Nav = styled.ul<NavProps>`
           margin-right: 48px;
           &:hover {
             h3 {
-              color: ${({ theme }) => theme.color.text.tannat} !important;
+              color: ${({ theme }) => theme.color.text.tannat};
               transition: 0.2s ease;
             }
             border-bottom: 2px solid ${({ theme }) => theme.color.text.tannat};
           }
         }
         ${({ theme }) => css`
-          @media (max-width: ${theme.breakpoint.desktop}) {
-          }
           @media (max-width: ${theme.breakpoint.laptop}) {
-          }
-          @media (max-width: ${theme.breakpoint.tablet}) {
             position: absolute;
             top: 88px;
             width: 50vw;
@@ -100,9 +109,22 @@ export const Nav = styled.ul<NavProps>`
             justify-content: center;
             left: 0;
             transform: translateX(-100%);
-            transition: 0.5s ease;
-          }
-          @media (max-width: ${theme.breakpoint.mobile}) {
+            transition: 0.2s ease;
+            li {
+              width: 100%;
+              margin-right: 0;
+              padding: 30px;
+              &:hover {
+                background-color: ${theme.color.text.tannat};
+                transition: 0.5s ease;
+                img {
+                  filter: brightness(500%);
+                }
+                h3 {
+                  color: ${theme.color.structure.white};
+                }
+              }
+            }
           }
         `}
       `}

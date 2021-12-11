@@ -6,8 +6,6 @@ import search from '../images/search.svg';
 import profile from '../images/profile.svg';
 import menu from '../images/menu.svg';
 
-// interface HeaderProps {}
-
 function Header() {
   const openMenu = ({ target }) =>
     target.parentNode.nextSibling.nextSibling.classList.toggle('active');
@@ -17,7 +15,7 @@ function Header() {
         <div className="menu" onClick={openMenu} aria-hidden="true">
           <img src={menu} alt="menu" />
         </div>
-        <a href="/">
+        <a href="/" className="logo">
           <img src={logo} alt="logo" />
         </a>
         <Nav text>
@@ -26,12 +24,17 @@ function Header() {
           <NavLink>Produtores</NavLink>
           <NavLink>Ofertas</NavLink>
           <NavLink>Eventos</NavLink>
+          {/* Este elemento não aparece por default */}
+          <NavLink className="profile-mobile">
+            <img src={profile} alt="profile" />
+          </NavLink>
+          {/* Este elemento não aparece por default */}
         </Nav>
         <Nav icon>
           <NavLink>
             <img src={search} alt="search" />
           </NavLink>
-          <NavLink>
+          <NavLink className="profile">
             <img src={profile} alt="profile" />
           </NavLink>
           <NavLink>
