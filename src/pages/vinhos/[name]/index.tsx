@@ -2,19 +2,17 @@
 import { Button } from '../../../components/DefaultDesignComponents/Buttons';
 import {
   Heading,
-  Paragraph
+  Paragraph,
+  SmallParagraph
 } from '../../../components/DefaultDesignComponents/Typography';
 import Price from '../../../components/DefaultDesignComponents/Typography/Price';
 import { item } from '../../../__mocks__/base';
 import BreadCrumb from './Breadcrumb';
 import Details from './Details';
+import MobileButton from './MobileButton';
 // import { ReactNode } from 'react';
 
-import { Container, Image, InfoContainer } from './styles';
-
-// interface WinePageProps {
-//   children: ReactNode;
-// }
+import { Container, Image, InfoContainer, SmallImage } from './styles';
 
 function WinePage() {
   // const router = useRouter();
@@ -32,6 +30,8 @@ function WinePage() {
     sommelierComment,
     avaliations,
     region,
+    price,
+    discount,
     flag
   } = item;
   return (
@@ -63,17 +63,18 @@ function WinePage() {
                 rating={rating}
                 avaliations={avaliations}
               />
+              <SmallImage src={image} />
             </div>
             <div className="info-price">
               <Price size="xLarge" value={priceMember} />
-              <Paragraph
+              <SmallParagraph
                 size="small"
                 type="grayLight"
                 weight="bold"
                 align="start"
               >
                 NÃO SÓCIO {priceNonMember.toFixed(2)}/UN
-              </Paragraph>
+              </SmallParagraph>
             </div>
             <div className="info-comment">
               <Heading level={6} size="small" weight="bold" align="start">
@@ -82,7 +83,7 @@ function WinePage() {
               <Paragraph
                 size="small"
                 type="grayLight"
-                weight="bold"
+                weight="regular"
                 lineHeight={21}
                 align="start"
               >
@@ -93,6 +94,12 @@ function WinePage() {
               Adicionar
             </Button>
           </div>
+          <MobileButton
+            discount={discount}
+            price={price}
+            priceMember={priceMember}
+            priceNonMember={priceNonMember}
+          />
         </InfoContainer>
       </div>
     </Container>

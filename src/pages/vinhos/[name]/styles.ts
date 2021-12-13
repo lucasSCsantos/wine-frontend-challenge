@@ -19,8 +19,11 @@ export const Container = styled.div`
     padding: 30px 0 77px 0;
     ${({ theme }) => css`
       @media (max-width: ${theme.breakpoint.laptop}) {
-        justify-content: center;
         width: 100vw;
+        padding: 0;
+        h4 {
+          display: none;
+        }
       }
     `};
   }
@@ -28,9 +31,7 @@ export const Container = styled.div`
 
 export const InfoContainer = styled.div`
   display: flex;
-  padding-top: 25px;
   justify-content: space-between;
-
   .info {
     width: 462px;
     height: 500px;
@@ -43,7 +44,47 @@ export const InfoContainer = styled.div`
         margin: 18px 0 8px 0;
       }
     }
+
+    .info-comment {
+      h6 {
+        margin-bottom: 8px;
+      }
+    }
   }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      padding: 32px 16px 32px 16px;
+      justify-content: center;
+      text-align: center;
+
+      .info {
+        height: fit-content;
+        justify-content: flex-start;
+        button {
+          display: none;
+        }
+      }
+
+      .info-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+
+      .info-price {
+        display: none;
+      }
+
+      .info-comment {
+        margin-bottom: 70px;
+      }
+    }
+  `};
 `;
 
 export const DetailsContainer = styled.div`
@@ -51,6 +92,17 @@ export const DetailsContainer = styled.div`
   align-items: center;
   width: 100%;
   justify-content: space-between;
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      width: 250px;
+      & > small:nth-child(7) {
+        display: none;
+      }
+      & > span:nth-child(6) {
+        display: none !important;
+      }
+    }
+  `};
 `;
 
 export const BreadCrumbContainer = styled.div`
@@ -59,6 +111,36 @@ export const BreadCrumbContainer = styled.div`
   }
   align-items: center;
   font-weight: 900;
+`;
+
+export const MobileButtonContainer = styled.div`
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 80px;
+  bottom: 0;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 -5px 5px 0 #00000010;
+  div {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    & > small:first-child {
+      width: 48px;
+      position: absolute;
+      top: -7px;
+    }
+    & > small:nth-child(2) {
+      text-align: start;
+    }
+  }
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      display: flex;
+      background-color: ${theme.color.structure.white};
+    }
+  `};
 `;
 
 export const Image = styled.div<ImageProps>`
@@ -71,6 +153,30 @@ export const Image = styled.div<ImageProps>`
     background-position: center center;
     background-repeat: no-repeat;
   `}
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      display: none;
+    }
+  `};
+`;
+
+export const SmallImage = styled.div<ImageProps>`
+  ${({ src }) => css`
+    background-image: url(${src});
+    height: 333px;
+    width: 218px;
+    /* background-color: pink; */
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: none;
+    margin: 16px 0;
+  `}
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      display: block;
+    }
+  `};
 `;
 
 export const Flag = styled.div<ImageProps>`

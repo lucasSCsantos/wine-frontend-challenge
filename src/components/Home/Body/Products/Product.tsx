@@ -37,9 +37,14 @@ const Product: NextPage<ProductProps> = ({ item }) => (
         </SmallParagraph>
       </div>
       <div className="price-member">
-        <Paragraph size="xxxSmall" type="text" weight="bold" className="member">
+        <SmallParagraph
+          size="xxxSmall"
+          type="text"
+          weight="bold"
+          className="member"
+        >
           SÓCIO WINE
-        </Paragraph>
+        </SmallParagraph>
         <Price value={item.priceMember} size="xxxSmall" />
       </div>
       <SmallParagraph size="xxSmall" type="grayLight">
