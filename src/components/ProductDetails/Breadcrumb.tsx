@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { SmallParagraph } from '../../../components/DefaultDesignComponents/Typography';
+import { SmallParagraph } from '../DefaultDesignComponents/Typography';
 import { BreadCrumbContainer } from './styles';
 
 interface BreadCrumbProps {
