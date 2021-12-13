@@ -134,6 +134,14 @@ export const Nav = styled.ul<NavProps>`
       transition: 0.2s ease;
     }
     border-bottom: 2px solid ${({ theme }) => theme.color.text.tannat};
+    ${({ theme }) => css`
+      @media (max-width: ${theme.breakpoint.laptop}) {
+        background-color: ${theme.color.text.tannat};
+        h3 {
+          color: ${theme.color.structure.white};
+        }
+      }
+    `}
   }
   display: flex;
   margin-left: 84px;

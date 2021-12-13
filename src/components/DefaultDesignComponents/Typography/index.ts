@@ -21,7 +21,7 @@ export const Heading = styled('h1').attrs<HeadingProps>(({ level = 1 }) => ({
     font-weight: ${font.weight[weight]};
     line-height: ${lineHeight}px;
     z-index: 10;
-    font-family: 'Neo Sans Std Regular';
+    font-family: 'Neo Sans Std ${weight}';
   `}
 `;
 
