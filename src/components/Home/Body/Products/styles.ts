@@ -46,12 +46,35 @@ export const ProductContainer = styled.div`
     padding: 10px 0 21px 0;
     ${({ theme }) => css`
       @media (max-width: ${theme.breakpoint.laptop}) {
-        width: 156px;
+        &,
+        .product-title {
+          width: 156px;
+        }
         p {
           font-size: 14px;
         }
+        .price-member {
+          .member {
+            font-weight: 300;
+            font-size: 10px;
+            padding: 0 10px;
+            line-height: 10px;
+            text-align: end;
+          }
+          width: 120px;
+        }
       }
     `}
+  }
+  .product-title {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      /* height: 178.1292724609375px; */
+      width: 191px;
+    }
   }
   .price-nom-member {
     width: 100px;
@@ -60,14 +83,11 @@ export const ProductContainer = styled.div`
     align-items: center;
   }
   .price-member {
-    width: 142px;
     display: flex;
     align-items: flex-end;
-    justify-content: space-between;
-  }
-  img {
-    /* height: 178.1292724609375px; */
-    width: 191px;
+    .member {
+      margin-right: 7px;
+    }
   }
   button {
     ${({ theme }) => css`

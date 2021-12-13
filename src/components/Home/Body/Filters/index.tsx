@@ -22,8 +22,9 @@ function Filters() {
         Pro preço
       </Paragraph>
       <FilterContainer>
-        {priceFilter.map(({ value, text }) => (
+        {priceFilter.map(({ value, text, id }) => (
           <Radio
+            key={id}
             value={value}
             checked={filter === value}
             name="radio"

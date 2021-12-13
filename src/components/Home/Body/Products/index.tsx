@@ -14,7 +14,7 @@ function Products() {
       <hr />
       <ProductsContainer>
         {api.items.map(item => (
-          <Product item={item} />
+          <Product item={item} key={item.id} />
         ))}
       </ProductsContainer>
       {/* Component de paginação */}

@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 import { BaseProps } from '../../../../__mocks__/base';
 import { Button } from '../../../DefaultDesignComponents/Buttons';
 import {
@@ -15,10 +16,14 @@ interface ProductProps {
 const Product: NextPage<ProductProps> = ({ item }) => (
   <ProductContainer>
     <div className="product-card">
-      <Image src={item.image} />
-      <Paragraph size="small" weight="bold">
-        {item.name}
-      </Paragraph>
+      <Link href={`vinhos/${item.name.replace(/ /g, '-')}`}>
+        <div className="product-title">
+          <Image src={item.image} />
+          <Paragraph size="small" weight="bold">
+            {item.name}
+          </Paragraph>
+        </div>
+      </Link>
       <div className="price-nom-member">
         <SmallParagraph
           size="xxxSmall"
@@ -32,10 +37,10 @@ const Product: NextPage<ProductProps> = ({ item }) => (
         </SmallParagraph>
       </div>
       <div className="price-member">
-        <Paragraph size="xxxSmall" type="text" weight="bold">
+        <Paragraph size="xxxSmall" type="text" weight="bold" className="member">
           SÓCIO WINE
         </Paragraph>
-        <Price value={item.priceMember} size="xxSmall" />
+        <Price value={item.priceMember} size="xxxSmall" />
       </div>
       <SmallParagraph size="xxSmall" type="grayLight">
         NÃO SÓCIO R${item.priceNonMember.toFixed(2)}
