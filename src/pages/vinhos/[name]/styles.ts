@@ -14,9 +14,11 @@ export const Container = styled.div`
     width: 1200px;
     height: inherit;
     display: flex;
-    /* background-color: green; */
     flex-direction: column;
     padding: 30px 0 77px 0;
+    h4 {
+      cursor: pointer;
+    }
     ${({ theme }) => css`
       @media (max-width: ${theme.breakpoint.laptop}) {
         width: 100vw;

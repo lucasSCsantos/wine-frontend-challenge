@@ -1,4 +1,5 @@
 // import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { Button } from '../../../components/DefaultDesignComponents/Buttons';
 import {
   Heading,
@@ -37,9 +38,11 @@ function WinePage() {
   return (
     <Container>
       <div className="content">
-        <Heading level={4} size="large" weight="regular" align="start">
-          {'<'} Voltar
-        </Heading>
+        <Link href="/">
+          <Heading level={4} size="large" weight="regular" align="start">
+            {'<'} Voltar
+          </Heading>
+        </Link>
         <InfoContainer>
           <Image src={image} />
           <div className="info">

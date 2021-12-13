@@ -42,6 +42,7 @@ const Details: NextPage<DetailsProps> = ({
       size={20}
       readonly
       emptyColor="#f1f1f1"
+      // fullIcon={star}
     />
     <SmallParagraph weight="regular" size="xSmall" type="gray" align="start">
       ({avaliations})
