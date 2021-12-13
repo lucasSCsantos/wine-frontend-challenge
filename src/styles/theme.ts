@@ -1,6 +1,6 @@
 const theme = {
   color: {
-    background: '#DEDEDE',
+    background: '#f5f5f5',
     text: {
       text: '#1D1D1B',
       gray: '#555555',
@@ -34,9 +34,9 @@ const theme = {
       tannat: { default: '#B6116E' },
       tavel: {
         default: '#F79552',
-        light: '#F9B950'
-      },
-      chenin: { default: '#F26649' }
+        light: '#F9B950',
+        chenin: '#F26649'
+      }
     }
   },
   button: {

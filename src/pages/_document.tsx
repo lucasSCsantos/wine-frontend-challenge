@@ -40,7 +40,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
-          <title>Wine Challenge</title>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
 
           <link href="/fonts/style.css" rel="stylesheet" />

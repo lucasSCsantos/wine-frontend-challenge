@@ -128,6 +128,13 @@ export const Nav = styled.ul<NavProps>`
         `}
       `}
   `}
+  .selected {
+    h3 {
+      color: ${({ theme }) => theme.color.text.tannat};
+      transition: 0.2s ease;
+    }
+    border-bottom: 2px solid ${({ theme }) => theme.color.text.tannat};
+  }
   display: flex;
   margin-left: 84px;
   align-items: center;
