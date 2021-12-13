@@ -20,7 +20,7 @@ function Header() {
         </a>
         <Nav text>
           <NavLink>Clube</NavLink>
-          <NavLink>Loja</NavLink>
+          <NavLink className="selected">Loja</NavLink>
           <NavLink>Produtores</NavLink>
           <NavLink>Ofertas</NavLink>
           <NavLink>Eventos</NavLink>
