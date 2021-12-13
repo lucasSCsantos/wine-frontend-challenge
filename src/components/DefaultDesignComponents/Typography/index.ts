@@ -10,18 +10,26 @@ export type HeadingProps = {
   weight?: keyof typeof font.weight;
   lineHeight?: string | number;
   level?: 1 | 2 | 3 | 4 | 5 | 6;
+  align?: string;
 };
 
 export const Heading = styled('h1').attrs<HeadingProps>(({ level = 1 }) => ({
   as: `h${level}`
 }))<HeadingProps>`
-  ${({ type = 'default', size, weight = 'bold', lineHeight = 20 }) => css`
+  ${({
+    type = 'default',
+    size,
+    weight = 'bold',
+    lineHeight = 20,
+    align = 'center'
+  }) => css`
     font-size: ${font.size[size]};
     color: ${text[type]};
     font-weight: ${font.weight[weight]};
     line-height: ${lineHeight}px;
     z-index: 10;
     font-family: 'Neo Sans Std ${weight}';
+    text-align: ${align};
   `}
 `;
 
@@ -58,6 +66,7 @@ export type SmallParagraphProps = {
   decoration?: string;
   filled?: boolean;
   color?: keyof typeof branding.tavel;
+  align?: string;
 };
 
 export const SmallParagraph = styled('small')<SmallParagraphProps>`
@@ -68,7 +77,8 @@ export const SmallParagraph = styled('small')<SmallParagraphProps>`
     lineHeight = 20,
     decoration = 'unset',
     filled,
-    color = 'default'
+    color = 'default',
+    align = 'center'
   }) => css`
     font-size: ${font.size[size]};
     color: ${text[type]};
@@ -76,6 +86,8 @@ export const SmallParagraph = styled('small')<SmallParagraphProps>`
     line-height: ${lineHeight}px;
     font-family: 'Lato';
     text-decoration: ${decoration};
+    text-align: ${align};
+
     ${() =>
       filled &&
       css`
