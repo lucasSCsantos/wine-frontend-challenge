@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { Rating } from 'react-simple-star-rating';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { SmallParagraph } from '../../../components/DefaultDesignComponents/Typography';
 import { Flag, DetailsContainer } from './styles';
 
@@ -39,10 +40,10 @@ const Details: NextPage<DetailsProps> = ({
     <Rating
       onClick={() => {}}
       ratingValue={rating}
-      size={20}
       readonly
       emptyColor="#f1f1f1"
-      // fullIcon={star}
+      fullIcon={<AiFillStar size={20} />}
+      emptyIcon={<AiOutlineStar size={20} />}
     />
     <SmallParagraph weight="regular" size="xSmall" type="gray" align="start">
       ({avaliations})

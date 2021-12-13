@@ -92,6 +92,9 @@ export const InfoContainer = styled.div`
 export const DetailsContainer = styled.div`
   display: flex;
   align-items: center;
+  span {
+    margin-top: 1px;
+  }
   width: 100%;
   justify-content: space-between;
   ${({ theme }) => css`

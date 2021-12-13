@@ -8,6 +8,9 @@ export const Container = styled.div`
   height: inherit;
   width: 69%;
   padding: 38px 0 44px 0;
+  small span {
+    font-weight: 700;
+  }
   hr {
     display: none;
     margin-top: 20px;
