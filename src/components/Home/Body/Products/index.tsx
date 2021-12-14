@@ -8,7 +8,7 @@ function Products() {
   return (
     <Container>
       <SmallParagraph size="medium">
-        {api.totalItems}
+        <span>{api.totalItems}</span>
         {`${' produtos encontrados'}`}
       </SmallParagraph>
       <hr />

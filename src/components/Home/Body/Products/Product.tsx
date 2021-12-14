@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import { BaseProps } from '../../../../__mocks__/base';
+import { ItemProps } from '../../../../__mocks__/base';
 import { Button } from '../../../DefaultDesignComponents/Buttons';
 import {
   Paragraph,
@@ -10,13 +10,13 @@ import Price from '../../../DefaultDesignComponents/Typography/Price';
 import { Image, ProductContainer } from './styles';
 
 interface ProductProps {
-  item?: BaseProps | any;
+  item?: ItemProps | any;
 }
 
 const Product: NextPage<ProductProps> = ({ item }) => (
   <ProductContainer>
     <div className="product-card">
-      <Link href={`vinhos/${item.name.replace(/ /g, '-')}`}>
+      <Link href={`vinhos/${encodeURIComponent(item.name)}?id=${item.id}`}>
         <div className="product-title">
           <Image src={item.image} />
           <Paragraph size="small" weight="bold">
@@ -37,9 +37,14 @@ const Product: NextPage<ProductProps> = ({ item }) => (
         </SmallParagraph>
       </div>
       <div className="price-member">
-        <Paragraph size="xxxSmall" type="text" weight="bold" className="member">
+        <SmallParagraph
+          size="xxxSmall"
+          type="text"
+          weight="bold"
+          className="member"
+        >
           SÓCIO WINE
-        </Paragraph>
+        </SmallParagraph>
         <Price value={item.priceMember} size="xxxSmall" />
       </div>
       <SmallParagraph size="xxSmall" type="grayLight">

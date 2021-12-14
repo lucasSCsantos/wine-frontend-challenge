@@ -53,6 +53,10 @@ const theme = {
         width: '73px',
         height: '38px'
       },
+      mobile: {
+        width: '180px',
+        height: '48px'
+      },
       large: {
         width: '256px',
         height: '39.36px'
