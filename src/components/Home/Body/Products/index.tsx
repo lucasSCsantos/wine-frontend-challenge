@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import ReactPaginate from 'react-paginate';
 import { base } from '../../../../__mocks__/base';
 import { SmallParagraph } from '../../../DefaultDesignComponents/Typography';
@@ -6,6 +7,10 @@ import { Container, ProductsContainer } from './styles';
 
 function Products() {
   const api = base;
+  const router = useRouter();
+  const handlePageClick = ({ selected }) => {
+    router.push(`${selected + 1}`);
+  };
   return (
     <Container>
       <SmallParagraph size="medium">
@@ -20,7 +25,7 @@ function Products() {
       </ProductsContainer>
       <ReactPaginate
         nextLabel="Próxima >>"
-        //  onPageChange={handlePageClick}
+        onPageChange={handlePageClick}
         pageRangeDisplayed={3}
         marginPagesDisplayed={1}
         pageCount={7}

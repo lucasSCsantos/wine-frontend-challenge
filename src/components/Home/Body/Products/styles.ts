@@ -25,6 +25,7 @@ export const Container = styled.div`
     .previous-item {
       display: flex;
       align-items: center;
+      font-weight: 700;
     }
     .next-item {
       margin-left: 8px;
@@ -34,7 +35,7 @@ export const Container = styled.div`
     }
     .break {
       display: flex;
-      align-items: flex-end;
+      align-items: center;
       font-size: 16px;
       margin: 0 4px;
     }
