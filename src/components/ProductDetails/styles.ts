@@ -103,7 +103,7 @@ export const DetailsContainer = styled.div`
         display: none;
       }
       & > span:nth-child(6) {
-        display: none !important;
+        display: none;
       }
     }
   `};
@@ -169,7 +169,6 @@ export const SmallImage = styled.div<ImageProps>`
     background-image: url(${src});
     height: 333px;
     width: 218px;
-    /* background-color: pink; */
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
