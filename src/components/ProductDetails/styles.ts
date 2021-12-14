@@ -5,7 +5,6 @@ export type ImageProps = {
 };
 
 export const Container = styled.div`
-  /* background-color: red; */
   width: 100vw;
   height: calc(100vh - 88px);
   display: flex;

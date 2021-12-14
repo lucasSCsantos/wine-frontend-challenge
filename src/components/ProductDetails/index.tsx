@@ -1,4 +1,3 @@
-// import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Button } from '../DefaultDesignComponents/Buttons';
 import {
@@ -11,8 +10,6 @@ import { item } from '../../__mocks__/base';
 import BreadCrumb from './Breadcrumb';
 import Details from './Details';
 import MobileButton from './MobileButton';
-// import { ReactNode } from 'react';
-
 import { Container, Image, InfoContainer, SmallImage } from './styles';
 
 function ProductPage() {
