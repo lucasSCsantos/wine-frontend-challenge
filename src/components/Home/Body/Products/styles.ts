@@ -15,12 +15,67 @@ export const Container = styled.div`
     display: none;
     margin-top: 20px;
   }
+  .pagination {
+    display: flex;
+    color: ${({ theme }) => theme.color.functional.tannat.default};
+    font-family: Lato;
+    width: 100%;
+    justify-content: center;
+    .next-item,
+    .previous-item {
+      display: flex;
+      align-items: center;
+    }
+    .next-item {
+      margin-left: 8px;
+    }
+    .previous-item {
+      margin-right: 8px;
+    }
+    .break {
+      display: flex;
+      align-items: flex-end;
+      font-size: 16px;
+      margin: 0 4px;
+    }
+    .page-item {
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      margin: 0 8px;
+      .page-link {
+        width: inherit;
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      border: 1px solid ${({ theme }) => theme.color.functional.tannat.default};
+    }
+    .active {
+      background-color: ${({ theme }) => theme.color.functional.tannat.default};
+      color: ${({ theme }) => theme.color.structure.white};
+    }
+    .disabled {
+      display: none;
+    }
+    .active + .page-item {
+      width: 73px;
+    }
+  }
   ${({ theme }) => css`
     @media (max-width: ${theme.breakpoint.laptop}) {
       width: 90%;
       hr {
         display: block;
         border-top: 0.5px solid ${theme.color.gray.light};
+      }
+      .pagination {
+        display: none;
       }
     }
   `}

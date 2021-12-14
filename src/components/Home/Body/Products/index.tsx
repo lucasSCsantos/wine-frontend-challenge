@@ -1,3 +1,4 @@
+import ReactPaginate from 'react-paginate';
 import { base } from '../../../../__mocks__/base';
 import { SmallParagraph } from '../../../DefaultDesignComponents/Typography';
 import Product from './Product';
@@ -17,7 +18,22 @@ function Products() {
           <Product item={item} key={item.id} />
         ))}
       </ProductsContainer>
-      {/* Component de paginação */}
+      <ReactPaginate
+        nextLabel="Próxima >>"
+        //  onPageChange={handlePageClick}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={1}
+        pageCount={7}
+        previousLabel="<< Anterior"
+        pageClassName="page-item"
+        pageLinkClassName="page-link"
+        previousClassName="next-item"
+        nextClassName="previous-item"
+        breakLabel="..."
+        breakClassName="break"
+        containerClassName="pagination"
+        activeClassName="active"
+      />
     </Container>
   );
 }
