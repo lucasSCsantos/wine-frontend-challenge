@@ -1,12 +1,18 @@
 import { useRouter } from 'next/router';
 import ReactPaginate from 'react-paginate';
-import { base } from '../../../../__mocks__/base';
+import { useSelector } from 'react-redux';
+import { ApplicationState } from '../../../../store';
+import { ProductsState } from '../../../../store/products/types';
+import { BaseProps } from '../../../../__mocks__/base';
 import { SmallParagraph } from '../../../DefaultDesignComponents/Typography';
 import Product from './Product';
 import { Container, ProductsContainer } from './styles';
 
 function Products() {
-  const api = base;
+  const { data }: ProductsState = useSelector(
+    store => (store as ApplicationState).products
+  );
+  const { totalItems, items, totalPages } = data as BaseProps;
   const router = useRouter();
   const handlePageClick = ({ selected }) => {
     router.push(`${selected + 1}`);
@@ -14,21 +20,21 @@ function Products() {
   return (
     <Container>
       <SmallParagraph size="medium">
-        <span>{api.totalItems}</span>
+        <span>{totalItems}</span>
         {`${' produtos encontrados'}`}
       </SmallParagraph>
       <hr />
       <ProductsContainer>
-        {api.items.map(item => (
+        {items.map(item => (
           <Product item={item} key={item.id} />
         ))}
       </ProductsContainer>
       <ReactPaginate
         nextLabel="Próxima >>"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={2}
         marginPagesDisplayed={1}
-        pageCount={7}
+        pageCount={totalPages}
         previousLabel="<< Anterior"
         pageClassName="page-item"
         pageLinkClassName="page-link"

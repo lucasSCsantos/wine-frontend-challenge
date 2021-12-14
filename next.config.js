@@ -1,6 +1,7 @@
 const withImages = require('next-images');
 
 module.exports = withImages({
+  esModule: true,
   async redirects() {
     return [
       {
@@ -9,6 +10,5 @@ module.exports = withImages({
         permanent: true,
       },
     ]
-  },
-  esModule: true,
+  }
 });

@@ -21,11 +21,13 @@ export const Container = styled.div`
     font-family: Lato;
     width: 100%;
     justify-content: center;
+    transition: ease 0.2s;
     .next-item,
     .previous-item {
       display: flex;
       align-items: center;
       font-weight: 700;
+      transition: ease 0.2s;
     }
     .next-item {
       margin-left: 8px;
@@ -38,8 +40,11 @@ export const Container = styled.div`
       align-items: center;
       font-size: 16px;
       margin: 0 4px;
+      transition: ease 0.2s;
     }
     .page-item {
+      transition: ease 0.2s;
+
       width: 38px;
       height: 38px;
       cursor: pointer;
