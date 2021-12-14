@@ -15,7 +15,7 @@ function Filters() {
   };
   return (
     <Container>
-      <Heading level={4} size="xLarge">
+      <Heading level={4} size="xLarge" align="start">
         Refine sua busca
       </Heading>
       <Paragraph size="large" weight="bold" align="start">
