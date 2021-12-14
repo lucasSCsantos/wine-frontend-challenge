@@ -1,11 +1,10 @@
 import type { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import { END } from 'redux-saga';
-import Body from '../components/Home/Body';
-import { SagaStore, storeWrapper } from '../store';
-import { loadRequest } from '../store/products/actions';
-
-import { BaseProps } from '../__mocks__/base';
+import Body from '../../components/Home/Body';
+import { SagaStore, storeWrapper } from '../../store';
+import { loadRequest } from '../../store/products/actions';
+import { BaseProps } from '../../__mocks__/base';
 
 export const getStaticPaths = async () => ({
   paths: [

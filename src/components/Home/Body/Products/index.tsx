@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { useSelector } from 'react-redux';
 import { ApplicationState } from '../../../../store';
@@ -9,14 +10,29 @@ import Product from './Product';
 import { Container, ProductsContainer } from './styles';
 
 function Products() {
+  const [actualPage, setActualPage] = useState(0);
+  const router = useRouter();
   const { data }: ProductsState = useSelector(
     store => (store as ApplicationState).products
   );
   const { totalItems, items, totalPages } = data as BaseProps;
-  const router = useRouter();
+
+  useEffect(() => {
+    setActualPage(+router.query.page - 1);
+  }, []);
+
   const handlePageClick = ({ selected }) => {
-    router.push(`${selected + 1}`);
+    const { query } = router;
+    if (query.filter) {
+      router.push({
+        pathname: '/[page]/[filter]',
+        query: { page: `${selected + 1}`, filter: query.filter }
+      });
+    } else {
+      router.push(`${selected + 1}`);
+    }
   };
+
   return (
     <Container>
       <SmallParagraph size="medium">
@@ -35,6 +51,7 @@ function Products() {
         pageRangeDisplayed={2}
         marginPagesDisplayed={1}
         pageCount={totalPages}
+        forcePage={actualPage}
         previousLabel="<< Anterior"
         pageClassName="page-item"
         pageLinkClassName="page-link"
@@ -44,6 +61,7 @@ function Products() {
         breakClassName="break"
         containerClassName="pagination"
         activeClassName="active"
+        renderOnZeroPageCount={null}
       />
     </Container>
   );

@@ -1,5 +1,8 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import priceFilter from '../../../../data/price-filter';
+import { setFilter } from '../../../../store/filters/actions';
 import Radio from '../../../DefaultDesignComponents/Inputs/Radio';
 import {
   Heading,
@@ -8,11 +11,17 @@ import {
 import { Container, FilterContainer } from './styles';
 
 function Filters() {
-  const [filter, setFilter] = useState('');
+  const [selected, setSelected] = useState('');
+  const router = useRouter();
+  const dispatch = useDispatch();
+
   const handleFilterChange = event => {
     const { value } = event.target;
-    setFilter(value);
+    router.push(`/1/${value}`);
+    setSelected(value);
+    dispatch(setFilter(value));
   };
+
   return (
     <Container>
       <Heading level={4} size="xLarge" align="start">
@@ -26,7 +35,7 @@ function Filters() {
           <Radio
             key={id}
             value={value}
-            checked={filter === value}
+            checked={selected === value}
             name="radio"
             onChange={event => handleFilterChange(event)}
           >
