@@ -1,5 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
+import addToCart from '../../../../helpers/addToCart';
 import { ItemProps } from '../../../../__mocks__/base';
 import { Button } from '../../../DefaultDesignComponents/Buttons';
 import {
@@ -17,7 +18,7 @@ const Product: NextPage<ProductProps> = ({ item }) => (
   <ProductContainer>
     <div className="product-card">
       <Link
-        href={`vinhos/${encodeURIComponent(item.name)}?id=${item.id}`}
+        href={`vinhos/${encodeURIComponent(item.name)}/id=${item.id}`}
         replace
       >
         <div className="product-title">
@@ -54,7 +55,7 @@ const Product: NextPage<ProductProps> = ({ item }) => (
         NÃO SÓCIO R${item.priceNonMember.toFixed(2)}
       </SmallParagraph>
     </div>
-    <Button filled color="success" size="large">
+    <Button filled color="success" size="large" onClick={() => addToCart(item)}>
       Adicionar
     </Button>
   </ProductContainer>

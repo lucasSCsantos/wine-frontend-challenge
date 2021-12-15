@@ -31,7 +31,8 @@ const theme = {
       },
       white: {
         default: '#FFFFFF',
-        disabled: '#FFFFFF1A'
+        disabled: '#FFFFFF1A',
+        hover: '#FFFFFF'
       }
     },
     branding: {

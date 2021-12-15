@@ -18,6 +18,7 @@ import {
   SmallImage,
   AddButton
 } from './styles';
+import addToCart from '../../helpers/addToCart';
 
 function ProductPage() {
   const [addCount, setAddCount] = useState(0);
@@ -105,7 +106,7 @@ function ProductPage() {
                   color="white"
                   circle
                   onClick={() => {
-                    if (addCount > 0) setAddCount(addCount - 1);
+                    if (addCount > 1) setAddCount(addCount - 1);
                   }}
                 >
                   -
@@ -120,7 +121,18 @@ function ProductPage() {
                   +
                 </Button>
               </div>
-              <Button size="product" filled color="success">
+              <Button
+                size="product"
+                filled
+                color="success"
+                weight="bold"
+                onClick={() =>
+                  Array.from({ length: addCount }, (_v, k) => k).map(() => {
+                    addToCart(item);
+                    return null;
+                  })
+                }
+              >
                 Adicionar
               </Button>
             </AddButton>

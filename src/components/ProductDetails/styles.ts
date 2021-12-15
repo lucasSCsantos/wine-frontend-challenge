@@ -98,7 +98,7 @@ export const DetailsContainer = styled.div`
   justify-content: space-between;
   ${({ theme }) => css`
     @media (max-width: ${theme.breakpoint.laptop}) {
-      width: 250px;
+      width: 300px;
       & > small:nth-child(7) {
         display: none;
       }
@@ -160,6 +160,11 @@ export const AddButton = styled.div`
   .count-button {
     button {
       font-weight: 600;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 2px;
     }
     width: 50%;
     display: flex;
@@ -167,6 +172,11 @@ export const AddButton = styled.div`
     justify-content: space-around;
     border-right: 2px solid ${({ theme }) => theme.color.structure.white};
   }
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      display: none;
+    }
+  `};
 `;
 
 export const Image = styled.div<ImageProps>`
