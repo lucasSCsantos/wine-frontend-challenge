@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import { Button } from '../DefaultDesignComponents/Buttons';
 import {
   Heading,
@@ -10,9 +11,16 @@ import { item } from '../../__mocks__/base';
 import BreadCrumb from './Breadcrumb';
 import Details from './Details';
 import MobileButton from './MobileButton';
-import { Container, Image, InfoContainer, SmallImage } from './styles';
+import {
+  Container,
+  Image,
+  InfoContainer,
+  SmallImage,
+  AddButton
+} from './styles';
 
 function ProductPage() {
+  const [addCount, setAddCount] = useState(0);
   const {
     image,
     name,
@@ -90,9 +98,32 @@ function ProductPage() {
                 {sommelierComment}
               </Paragraph>
             </div>
-            <Button filled color="success" size="large">
-              Adicionar
-            </Button>
+            <AddButton>
+              <div className="count-button">
+                <Button
+                  size="mini"
+                  color="white"
+                  circle
+                  onClick={() => {
+                    if (addCount > 0) setAddCount(addCount - 1);
+                  }}
+                >
+                  -
+                </Button>
+                {addCount}
+                <Button
+                  size="mini"
+                  color="white"
+                  circle
+                  onClick={() => setAddCount(addCount + 1)}
+                >
+                  +
+                </Button>
+              </div>
+              <Button size="product" filled color="success">
+                Adicionar
+              </Button>
+            </AddButton>
           </div>
           <MobileButton
             priceData={{ discount, price, priceMember, priceNonMember }}

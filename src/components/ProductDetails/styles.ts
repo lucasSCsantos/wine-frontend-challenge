@@ -147,6 +147,28 @@ export const MobileButtonContainer = styled.div`
   `};
 `;
 
+export const AddButton = styled.div`
+  font-size: 24px;
+  font-family: Lato;
+  color: ${({ theme }) => theme.color.structure.white};
+  width: 328px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.color.functional.success.default};
+  display: flex;
+  align-items: center;
+  .count-button {
+    button {
+      font-weight: 600;
+    }
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-right: 2px solid ${({ theme }) => theme.color.structure.white};
+  }
+`;
+
 export const Image = styled.div<ImageProps>`
   ${({ src }) => css`
     background-image: url(${src});
