@@ -41,6 +41,22 @@ export const CartProduct = styled.div`
   padding: 16px;
   border-bottom: 1px solid #ddd;
   display: flex;
+  position: relative;
+
+  & > button:first-child {
+    position: absolute;
+    color: #9f9f9f;
+    border: 2px solid #9f9f9f;
+    display: flex;
+    align-items: center;
+    right: 16px;
+    font-size: 16px;
+    justify-content: center;
+    height: 18px;
+    width: 18px;
+    background-color: ${({ theme }) => theme.color.structure.transparent};
+    border-radius: 20px;
+  }
 
   img {
     height: 110px;
@@ -50,7 +66,10 @@ export const CartProduct = styled.div`
   .cart-item-details {
     display: flex;
     flex-direction: column;
-
+    justify-content: space-between;
+    & > small:nth-child(2) {
+      margin-top: -10px;
+    }
     .cart-item-count {
       font-family: Lato;
       width: 60px;

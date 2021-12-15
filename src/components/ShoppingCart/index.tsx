@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
 import addToCart from '../../helpers/addToCart';
+import deleteFromCart from '../../helpers/deleteFromCart';
 import {
   Paragraph,
   SmallParagraph
@@ -45,9 +46,12 @@ function ShoppingCart() {
           <BsArrowLeft size="20" onClick={closeShoppingCart} />
           <Paragraph size="large">WineBox ({cartItems?.totalItems})</Paragraph>
         </div>
-        {cartItems &&
+        {cartItems.items.length !== 0 ? (
           cartItems?.items?.map(item => (
             <CartProduct key={item.id}>
+              <button type="button" onClick={() => deleteFromCart(item)}>
+                x
+              </button>
               <img src={item.image} alt={item.name} />
               <div className="cart-item-details">
                 <SmallParagraph size="small" align="start">
@@ -65,7 +69,12 @@ function ShoppingCart() {
                 </div>
               </div>
             </CartProduct>
-          ))}
+          ))
+        ) : (
+          <div className="empty-cart">
+            Você ainda não adicionou items ao carrinho
+          </div>
+        )}
       </div>
     </Container>
   );

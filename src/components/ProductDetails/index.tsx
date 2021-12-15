@@ -143,6 +143,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
             </AddButton>
           </div>
           <MobileButton
+            product={product}
             priceData={{ discount, price, priceMember, priceNonMember }}
           />
         </InfoContainer>

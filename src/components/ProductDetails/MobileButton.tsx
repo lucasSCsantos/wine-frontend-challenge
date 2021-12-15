@@ -1,4 +1,6 @@
 import type { NextPage } from 'next';
+import addToCart from '../../helpers/addToCart';
+import { ItemProps } from '../../__mocks__/base';
 import { Button } from '../DefaultDesignComponents/Buttons';
 import { SmallParagraph } from '../DefaultDesignComponents/Typography';
 import Price from '../DefaultDesignComponents/Typography/Price';
@@ -13,9 +15,10 @@ interface PriceDataProps {
 
 interface MobileButtonProps {
   priceData: PriceDataProps;
+  product: ItemProps;
 }
 
-const MobileButton: NextPage<MobileButtonProps> = ({ priceData }) => {
+const MobileButton: NextPage<MobileButtonProps> = ({ priceData, product }) => {
   const { discount, price, priceMember, priceNonMember } = priceData;
   return (
     <MobileButtonContainer>
@@ -35,7 +38,12 @@ const MobileButton: NextPage<MobileButtonProps> = ({ priceData }) => {
           PREÇO NÃO SÓCIO R${priceNonMember.toFixed(2)}
         </SmallParagraph>
       </div>
-      <Button filled color="success" size="mobile">
+      <Button
+        filled
+        color="success"
+        size="mobile"
+        onClick={() => addToCart(product)}
+      >
         Adicionar
       </Button>
     </MobileButtonContainer>
