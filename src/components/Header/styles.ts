@@ -194,6 +194,7 @@ export const SearchButton = styled.button`
 export const SearchBarContainer = styled.div`
   display: none;
   width: 100vw;
+  z-index: 20;
   position: absolute;
   bottom: -73px;
   height: 73px;

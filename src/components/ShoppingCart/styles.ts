@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   width: 100vw;
@@ -34,6 +34,13 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: flex-start;
   }
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.mobile}) {
+      .content {
+        width: 300px;
+      }
+    }
+  `};
 `;
 
 export const CartProductContainer = styled.div`
@@ -43,19 +50,19 @@ export const CartProductContainer = styled.div`
   display: flex;
   position: relative;
 
-  & > button:first-child {
+  & > svg:first-child {
     position: absolute;
+    cursor: pointer;
     color: #9f9f9f;
-    border: 2px solid #9f9f9f;
-    display: flex;
-    align-items: center;
     right: 16px;
-    font-size: 16px;
-    justify-content: center;
     height: 18px;
     width: 18px;
-    background-color: ${({ theme }) => theme.color.structure.transparent};
-    border-radius: 20px;
+  }
+
+  & > p:nth-child(2) {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
   }
 
   img {

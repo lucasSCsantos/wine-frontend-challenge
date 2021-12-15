@@ -26,5 +26,5 @@ const makeStore = () => {
 };
 
 export const storeWrapper = createWrapper<Store<ApplicationState>>(makeStore, {
-  debug: true
+  debug: false
 });

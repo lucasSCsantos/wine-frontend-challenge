@@ -21,6 +21,8 @@ export const PriceRoot = styled('p')<PriceProps>`
             return '23px';
           case 'xxSmall':
             return '18px';
+          case 'xSmall':
+            return '20px';
           case 'small':
             return '24px';
           case 'xLarge':
@@ -36,6 +38,8 @@ export const PriceRoot = styled('p')<PriceProps>`
           case 'xxxSmall':
             return '13px';
           case 'xxSmall':
+            return '16px';
+          case 'xSmall':
             return '16px';
           case 'small':
             return '20px';

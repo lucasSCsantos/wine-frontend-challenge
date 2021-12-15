@@ -18,6 +18,7 @@ export default item => {
       const newItem = { ...actualItem, count: actualItem.count + 1 };
       const index = cartItems.items.indexOf(actualItem);
       localStorage.cartItems = JSON.stringify({
+        totalPrice: cartItems.totalPrice + itemToAdd.priceNonMember,
         totalItems: cartItems.totalItems + 1,
         items: [
           ...cartItems.items.slice(0, index),
@@ -27,6 +28,7 @@ export default item => {
       });
     } else {
       localStorage.cartItems = JSON.stringify({
+        totalPrice: cartItems.totalPrice + itemToAdd.priceNonMember,
         totalItems: cartItems.totalItems + 1,
         items: [...cartItems.items, itemToAdd]
       });
@@ -34,6 +36,7 @@ export default item => {
     Router.reload();
   } else {
     localStorage.cartItems = JSON.stringify({
+      totalPrice: itemToAdd.priceNonMember,
       totalItems: 1,
       items: [itemToAdd]
     });

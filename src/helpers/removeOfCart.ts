@@ -9,6 +9,7 @@ const removeOfCart = item => {
     if (actualItem && actualItem.count > 1) {
       const newItem = { ...actualItem, count: actualItem.count - 1 };
       localStorage.cartItems = JSON.stringify({
+        totalPrice: cartItems.totalPrice - item.priceNonMember,
         totalItems: cartItems.totalItems - 1,
         items: [
           ...cartItems.items.slice(0, index),
@@ -18,6 +19,7 @@ const removeOfCart = item => {
       });
     } else {
       localStorage.cartItems = JSON.stringify({
+        totalPrice: cartItems.totalPrice - item.priceNonMember,
         totalItems: cartItems.totalItems - 1,
         items: [
           ...cartItems.items.splice(0, index),

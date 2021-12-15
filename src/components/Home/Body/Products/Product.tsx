@@ -18,7 +18,7 @@ const Product: NextPage<ProductProps> = ({ item }) => (
   <ProductContainer>
     <div className="product-card">
       <Link
-        href={`vinhos/${encodeURIComponent(item.name)}/id=${item.id}`}
+        href={`/vinhos/${encodeURIComponent(item.name)}/id=${item.id}`}
         replace
       >
         <div className="product-title">

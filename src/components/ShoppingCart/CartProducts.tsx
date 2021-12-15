@@ -1,10 +1,12 @@
 import { NextPage } from 'next';
 import React from 'react';
+import { TiDeleteOutline } from 'react-icons/ti';
 import addToCart from '../../helpers/addToCart';
 import deleteFromCart from '../../helpers/deleteFromCart';
 import { SmallParagraph } from '../DefaultDesignComponents/Typography';
 import { CartProductContainer } from './styles';
 import removeOfCart from '../../helpers/removeOfCart';
+import Price from '../DefaultDesignComponents/Typography/Price';
 
 interface CartItemProps {
   name: string;
@@ -21,9 +23,8 @@ interface CartProductProps {
 
 const CartProduct: NextPage<CartProductProps> = ({ item }) => (
   <CartProductContainer key={item.id}>
-    <button type="button" onClick={() => deleteFromCart(item)}>
-      x
-    </button>
+    <TiDeleteOutline onClick={() => deleteFromCart(item)} />
+    <Price value={item.count * item.priceNonMember} size="xSmall" />
     <img src={item.image} alt={item.name} />
     <div className="cart-item-details">
       <SmallParagraph size="small" align="start">
