@@ -72,7 +72,8 @@ export const Nav = styled.ul<NavProps>`
     ${() =>
       icon &&
       css`
-        li {
+        li,
+        button {
           margin-left: 42px;
         }
         ${({ theme }) => css`
@@ -155,6 +156,20 @@ export const NavLinkContainer = styled.li`
     width: 56px;
     height: 56px;
   }
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  border-bottom: 2px solid ${({ theme }) => theme.color.structure.transparent};
+`;
+
+export const ShoppingCartButton = styled.button`
+  img {
+    width: 56px;
+    height: 56px;
+  }
+  background-color: ${({ theme }) => theme.color.structure.transparent};
+  border: none;
   display: flex;
   align-items: center;
   height: 100%;

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import NavLink from './NavLink';
-import { Container, Nav, SearchButton } from './styles';
+import { Container, Nav, SearchButton, ShoppingCartButton } from './styles';
 import logo from '../../images/black.svg';
 import box from '../../images/winebox.svg';
 import search1 from '../../images/search.svg';
@@ -19,6 +19,13 @@ function Header() {
       'searchActive'
     );
   };
+
+  const openShoppingCart = ({ target }) => {
+    target.parentNode.parentNode.parentNode.nextSibling.nextSibling.classList.add(
+      'shoppingCartActive'
+    );
+  };
+
   return (
     <Container>
       <div className="content">
@@ -45,9 +52,9 @@ function Header() {
           <NavLink className="profile">
             <img src={profile} alt="profile" />
           </NavLink>
-          <NavLink>
+          <ShoppingCartButton onClick={openShoppingCart}>
             <img src={box} alt="winebox" />
-          </NavLink>
+          </ShoppingCartButton>
         </Nav>
       </div>
       <SearchBar
