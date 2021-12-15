@@ -34,6 +34,19 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: flex-start;
   }
+  .checkout {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    .checkout-price {
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      margin-bottom: 20px;
+    }
+  }
   ${({ theme }) => css`
     @media (max-width: ${theme.breakpoint.mobile}) {
       .content {

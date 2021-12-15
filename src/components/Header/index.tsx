@@ -24,6 +24,7 @@ function Header() {
     target.parentNode.parentNode.parentNode.nextSibling.nextSibling.classList.add(
       'shoppingCartActive'
     );
+    document.body.classList.add('no-scroll');
   };
 
   return (

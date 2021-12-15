@@ -69,6 +69,10 @@ const theme = {
       large: {
         width: '256px',
         height: '39.36px'
+      },
+      xLarge: {
+        width: '310px',
+        height: '48px'
       }
     }
   },
