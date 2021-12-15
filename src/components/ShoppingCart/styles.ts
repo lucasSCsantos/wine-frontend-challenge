@@ -36,7 +36,7 @@ export const Container = styled.div`
   }
 `;
 
-export const CartProduct = styled.div`
+export const CartProductContainer = styled.div`
   width: 100%;
   padding: 16px;
   border-bottom: 1px solid #ddd;

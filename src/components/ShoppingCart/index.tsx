@@ -1,12 +1,8 @@
 import { useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs';
-import addToCart from '../../helpers/addToCart';
-import deleteFromCart from '../../helpers/deleteFromCart';
-import {
-  Paragraph,
-  SmallParagraph
-} from '../DefaultDesignComponents/Typography';
-import { Container, CartProduct } from './styles';
+import { Paragraph } from '../DefaultDesignComponents/Typography';
+import CartProduct from './CartProducts';
+import { Container } from './styles';
 
 export type CartItemProps = {
   name: string;
@@ -48,27 +44,7 @@ function ShoppingCart() {
         </div>
         {cartItems.items.length !== 0 ? (
           cartItems?.items?.map(item => (
-            <CartProduct key={item.id}>
-              <button type="button" onClick={() => deleteFromCart(item)}>
-                x
-              </button>
-              <img src={item.image} alt={item.name} />
-              <div className="cart-item-details">
-                <SmallParagraph size="small" align="start">
-                  {item.name}
-                </SmallParagraph>
-                <SmallParagraph size="xxSmall" align="start" type="grayLight">
-                  {item.country}
-                </SmallParagraph>
-                <div className="cart-item-count">
-                  <button type="button">-</button>
-                  {item.count}
-                  <button type="button" onClick={() => addToCart(item)}>
-                    +
-                  </button>
-                </div>
-              </div>
-            </CartProduct>
+            <CartProduct key={item.id} item={item} />
           ))
         ) : (
           <div className="empty-cart">

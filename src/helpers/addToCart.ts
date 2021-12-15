@@ -1,3 +1,5 @@
+import Router from 'next/router';
+
 export default item => {
   const { image, name, country, priceNonMember, id: itemId } = item;
   const itemToAdd = {
@@ -29,6 +31,7 @@ export default item => {
         items: [...cartItems.items, itemToAdd]
       });
     }
+    Router.reload();
   } else {
     localStorage.cartItems = JSON.stringify({
       totalItems: 1,

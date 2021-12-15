@@ -35,7 +35,7 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
   .info {
     width: 462px;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

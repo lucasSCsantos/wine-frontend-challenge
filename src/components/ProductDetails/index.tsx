@@ -42,8 +42,10 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
     region,
     price,
     discount,
+    volume,
     flag
   } = product;
+  console.log(product);
   return (
     <Container>
       <div className="content">
@@ -74,7 +76,8 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                   country,
                   classification,
                   rating,
-                  avaliations
+                  avaliations,
+                  volume
                 }}
               />
               <SmallImage src={image} />

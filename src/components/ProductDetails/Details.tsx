@@ -12,6 +12,7 @@ interface DetailsDataProps {
   size: string;
   rating: number;
   avaliations: number;
+  volume: string;
 }
 
 interface DetailsProps {
@@ -19,8 +20,16 @@ interface DetailsProps {
 }
 
 const Details: NextPage<DetailsProps> = ({ detailsData }) => {
-  const { flag, type, size, country, classification, avaliations, rating } =
-    detailsData;
+  const {
+    flag,
+    type,
+    size,
+    country,
+    classification,
+    avaliations,
+    rating,
+    volume
+  } = detailsData;
   return (
     <DetailsContainer>
       <Flag src={flag} />
@@ -34,18 +43,18 @@ const Details: NextPage<DetailsProps> = ({ detailsData }) => {
         {classification}
       </SmallParagraph>
       <SmallParagraph weight="regular" size="xSmall" type="gray" align="start">
-        {size}
+        {size || volume}
       </SmallParagraph>
       <Rating
         onClick={() => {}}
         ratingValue={rating}
         readonly
-        emptyColor="#f1f1f1"
+        emptyColor="#333333"
         fullIcon={<AiFillStar size={20} />}
         emptyIcon={<AiOutlineStar size={20} />}
       />
       <SmallParagraph weight="regular" size="xSmall" type="gray" align="start">
-        ({avaliations})
+        ({avaliations || 1})
       </SmallParagraph>
     </DetailsContainer>
   );
