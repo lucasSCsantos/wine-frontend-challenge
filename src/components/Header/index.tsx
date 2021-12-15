@@ -7,6 +7,7 @@ import search1 from '../../images/search.svg';
 import profile from '../../images/profile.svg';
 import menu from '../../images/menu.svg';
 import SearchBar from './SearchBar';
+import ShoppingCart from '../ShoppingCart';
 
 function Header() {
   const [search, setSearch] = useState('');
@@ -53,6 +54,7 @@ function Header() {
         onChange={({ target }) => setSearch(target.value)}
         value={search}
       />
+      <ShoppingCart />
     </Container>
   );
 }
