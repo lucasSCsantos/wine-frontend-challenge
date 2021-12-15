@@ -13,8 +13,10 @@ function Filters() {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.pathname.includes('query')) setSelected('');
-  }, []);
+    if (router.asPath.includes('query')) setSelected('');
+    if (router.asPath.includes('filter'))
+      setSelected((router.query.filter as string).split('=')[1]);
+  }, [router]);
 
   const handleFilterChange = event => {
     const { value } = event.target;

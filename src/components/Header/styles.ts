@@ -205,4 +205,15 @@ export const SearchBarContainer = styled.div`
   &.searchActive {
     display: flex;
   }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      input {
+        width: 90vw;
+      }
+      button {
+        right: 40px;
+      }
+    }
+  `}
 `;

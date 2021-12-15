@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-// import { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import { SearchBarContainer } from './styles';
 import search2 from '../../images/search2.svg';
@@ -32,7 +31,5 @@ const SearchBar: NextPage<SearchBarProps> = ({ onChange, value }) => {
     </SearchBarContainer>
   );
 };
-
-// SearchBar.defaultProps = defaultProps;
 
 export default SearchBar;
