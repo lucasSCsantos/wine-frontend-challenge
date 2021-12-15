@@ -9,6 +9,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: center;
   width: 100vw;
+  position: relative;
   height: 88px;
   background-color: ${({ theme }) => theme.color.structure.white};
   border-bottom: 0.5px #cccccc solid;
@@ -159,4 +160,60 @@ export const NavLinkContainer = styled.li`
   height: 100%;
   cursor: pointer;
   border-bottom: 2px solid ${({ theme }) => theme.color.structure.transparent};
+`;
+
+export const SearchButton = styled.button`
+  img {
+    width: 56px;
+    height: 56px;
+  }
+  background-color: ${({ theme }) => theme.color.structure.transparent};
+  border: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+  border-bottom: 2px solid ${({ theme }) => theme.color.structure.transparent};
+`;
+
+export const SearchBarContainer = styled.div`
+  display: none;
+  width: 100vw;
+  position: absolute;
+  bottom: -73px;
+  height: 73px;
+  justify-content: center;
+  align-items: center;
+  background-color: ${({ theme }) => theme.color.background};
+  box-shadow: 0 2px 20px 0 rgb(0 0 0 / 15%);
+  input {
+    outline: none;
+    border: none;
+    height: 60%;
+    padding: 10px;
+    width: 1200px;
+    font-size: ${({ theme }) => theme.font.size.large};
+  }
+  button {
+    position: absolute;
+    width: 30px;
+    border: none;
+    background-color: ${({ theme }) => theme.color.structure.transparent};
+    height: 30px;
+    right: 370px;
+  }
+  &.searchActive {
+    display: flex;
+  }
+
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      input {
+        width: 90vw;
+      }
+      button {
+        right: 40px;
+      }
+    }
+  `}
 `;

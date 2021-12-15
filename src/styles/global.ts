@@ -9,6 +9,7 @@ export default createGlobalStyle`
 
   body {
 		background-color: ${({ theme }) => theme.color.background};
+    overflow-x: hidden;
   }
 
   img {

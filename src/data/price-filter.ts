@@ -21,7 +21,7 @@ export default [
   },
   {
     id: 5,
-    value: '500-500',
-    text: 'Até R$40'
+    value: '500-1000',
+    text: 'Acima de R$500'
   }
 ];

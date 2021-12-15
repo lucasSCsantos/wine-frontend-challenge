@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import priceFilter from '../../../../data/price-filter';
 import Radio from '../../../DefaultDesignComponents/Inputs/Radio';
 import {
@@ -8,14 +9,24 @@ import {
 import { Container, FilterContainer } from './styles';
 
 function Filters() {
-  const [filter, setFilter] = useState('');
+  const [selected, setSelected] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.asPath.includes('query')) setSelected('');
+    if (router.asPath.includes('filter'))
+      setSelected((router.query.filter as string).split('=')[1]);
+  }, [router]);
+
   const handleFilterChange = event => {
     const { value } = event.target;
-    setFilter(value);
+    router.push(`/1/filter=${value}`);
+    setSelected(value);
   };
+
   return (
     <Container>
-      <Heading level={4} size="xLarge">
+      <Heading level={4} size="xLarge" align="start">
         Refine sua busca
       </Heading>
       <Paragraph size="large" weight="bold" align="start">
@@ -26,7 +37,7 @@ function Filters() {
           <Radio
             key={id}
             value={value}
-            checked={filter === value}
+            checked={selected === value}
             name="radio"
             onChange={event => handleFilterChange(event)}
           >
