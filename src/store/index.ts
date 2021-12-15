@@ -2,14 +2,12 @@ import { createWrapper } from 'next-redux-wrapper';
 import { AnyAction, applyMiddleware, createStore, Store } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware, { Task } from 'redux-saga';
-import { FiltersState } from './filters/types';
 import { ProductsState } from './products/types';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
 
 export interface ApplicationState {
   products: ProductsState;
-  filters: FiltersState;
 }
 
 export interface SagaStore extends Store<ApplicationState, AnyAction> {

@@ -1,14 +1,23 @@
+import { useState } from 'react';
 import NavLink from './NavLink';
-import { Container, Nav } from './styles';
+import { Container, Nav, SearchButton } from './styles';
 import logo from '../../images/black.svg';
 import box from '../../images/winebox.svg';
-import search from '../../images/search.svg';
+import search1 from '../../images/search.svg';
 import profile from '../../images/profile.svg';
 import menu from '../../images/menu.svg';
+import SearchBar from './SearchBar';
 
 function Header() {
+  const [search, setSearch] = useState('');
   const openMenu = ({ target }) =>
     target.parentNode.nextSibling.nextSibling.classList.toggle('active');
+
+  const openSearch = ({ target }) => {
+    target.parentNode.parentNode.parentNode.nextSibling.classList.toggle(
+      'searchActive'
+    );
+  };
   return (
     <Container>
       <div className="content">
@@ -29,9 +38,9 @@ function Header() {
           </NavLink>
         </Nav>
         <Nav icon>
-          <NavLink>
-            <img src={search} alt="search" />
-          </NavLink>
+          <SearchButton onClick={openSearch}>
+            <img src={search1} alt="search" />
+          </SearchButton>
           <NavLink className="profile">
             <img src={profile} alt="profile" />
           </NavLink>
@@ -40,6 +49,10 @@ function Header() {
           </NavLink>
         </Nav>
       </div>
+      <SearchBar
+        onChange={({ target }) => setSearch(target.value)}
+        value={search}
+      />
     </Container>
   );
 }

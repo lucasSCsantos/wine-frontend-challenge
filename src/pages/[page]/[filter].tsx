@@ -14,7 +14,14 @@ export const getStaticPaths = async () => ({
 export const getStaticProps: GetStaticProps = storeWrapper.getStaticProps(
   store => async context => {
     const { page, filter } = context.params;
-    store.dispatch(loadRequest({ page, filter }));
+    const requestData = {
+      query: filter.includes('query') ? (filter as string).split('=')[1] : null,
+      filter: filter.includes('filter')
+        ? (filter as string).split('=')[1]
+        : null,
+      page
+    };
+    store.dispatch(loadRequest(requestData));
     store.dispatch(END);
     await (store as SagaStore).sagaTask.toPromise();
     return null;

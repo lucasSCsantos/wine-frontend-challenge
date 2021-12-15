@@ -1,8 +1,6 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
 import priceFilter from '../../../../data/price-filter';
-import { setFilter } from '../../../../store/filters/actions';
 import Radio from '../../../DefaultDesignComponents/Inputs/Radio';
 import {
   Heading,
@@ -13,13 +11,15 @@ import { Container, FilterContainer } from './styles';
 function Filters() {
   const [selected, setSelected] = useState('');
   const router = useRouter();
-  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (router.pathname.includes('query')) setSelected('');
+  }, []);
 
   const handleFilterChange = event => {
     const { value } = event.target;
-    router.push(`/1/${value}`);
+    router.push(`/1/filter=${value}`);
     setSelected(value);
-    dispatch(setFilter(value));
   };
 
   return (
