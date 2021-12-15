@@ -10,17 +10,19 @@ export default item => {
   };
   if (localStorage.getItem('cartItems')) {
     const cartItems = JSON.parse(localStorage.getItem('cartItems'));
-    const condition = cartItems.some(({ id }) => id === item.id);
-    const count = condition
-      ? cartItems.reduce((acc, curr) => {
-          if (curr.id === item.id) {
-            return acc + 1;
-          }
-          return acc;
-        }, 1)
-      : 1;
-    itemToAdd.count = count;
-    localStorage.cartItems = JSON.stringify([...cartItems, itemToAdd]);
+    const [actualItem] = cartItems.filter(({ id }) => id === item.id);
+
+    if (actualItem) {
+      const newItem = { ...actualItem, count: actualItem.count + 1 };
+      const index = cartItems.indexOf(actualItem);
+      localStorage.cartItems = JSON.stringify([
+        ...cartItems.splice(0, index),
+        newItem,
+        ...cartItems.splice(index + 1)
+      ]);
+    } else {
+      localStorage.cartItems = JSON.stringify([...cartItems, itemToAdd]);
+    }
   } else {
     localStorage.cartItems = JSON.stringify([itemToAdd]);
   }

@@ -26,7 +26,7 @@ interface ProductPageProps {
 }
 
 const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
-  const [addCount, setAddCount] = useState(0);
+  const [addCount, setAddCount] = useState(1);
   const {
     image,
     name,
