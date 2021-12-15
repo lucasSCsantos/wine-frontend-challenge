@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { NextPage } from 'next';
 import { Button } from '../DefaultDesignComponents/Buttons';
 import {
   Heading,
@@ -7,7 +8,7 @@ import {
   SmallParagraph
 } from '../DefaultDesignComponents/Typography';
 import Price from '../DefaultDesignComponents/Typography/Price';
-import { item } from '../../__mocks__/base';
+import { ItemProps } from '../../__mocks__/base';
 import BreadCrumb from './Breadcrumb';
 import Details from './Details';
 import MobileButton from './MobileButton';
@@ -20,7 +21,11 @@ import {
 } from './styles';
 import addToCart from '../../helpers/addToCart';
 
-function ProductPage() {
+interface ProductPageProps {
+  product: ItemProps;
+}
+
+const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
   const [addCount, setAddCount] = useState(0);
   const {
     image,
@@ -38,7 +43,7 @@ function ProductPage() {
     price,
     discount,
     flag
-  } = item;
+  } = product;
   return (
     <Container>
       <div className="content">
@@ -128,7 +133,7 @@ function ProductPage() {
                 weight="bold"
                 onClick={() =>
                   Array.from({ length: addCount }, (_v, k) => k).map(() => {
-                    addToCart(item);
+                    addToCart(product);
                     return null;
                   })
                 }
@@ -144,6 +149,6 @@ function ProductPage() {
       </div>
     </Container>
   );
-}
+};
 
 export default ProductPage;
