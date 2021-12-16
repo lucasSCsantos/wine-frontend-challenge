@@ -11,11 +11,11 @@ import ShoppingCart from '../ShoppingCart';
 
 function Header() {
   const [search, setSearch] = useState('');
-  const [cartCount, setCartCount] = useState();
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     const cartItems = JSON.parse(localStorage.getItem('cartItems'));
-    setCartCount(cartItems.totalItems);
+    setCartCount(cartItems?.totalItems || 0);
   }, []);
 
   const openMenu = ({ target }) =>
