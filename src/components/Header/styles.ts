@@ -164,15 +164,30 @@ export const NavLinkContainer = styled.li`
 `;
 
 export const ShoppingCartButton = styled.button`
+  background-color: red;
+  .cart-count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    color: #5cb79f;
+    background-color: #f5f5f5;
+  }
   img {
     width: 56px;
     height: 56px;
   }
+  position: relative;
   background-color: ${({ theme }) => theme.color.structure.transparent};
   border: none;
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 56px;
   cursor: pointer;
   border-bottom: 2px solid ${({ theme }) => theme.color.structure.transparent};
 `;

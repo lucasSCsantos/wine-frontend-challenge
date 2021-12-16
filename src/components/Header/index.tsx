@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NavLink from './NavLink';
 import { Container, Nav, SearchButton, ShoppingCartButton } from './styles';
 import logo from '../../images/black.svg';
@@ -11,6 +11,13 @@ import ShoppingCart from '../ShoppingCart';
 
 function Header() {
   const [search, setSearch] = useState('');
+  const [cartCount, setCartCount] = useState();
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    setCartCount(cartItems.totalItems);
+  }, []);
+
   const openMenu = ({ target }) =>
     target.parentNode.nextSibling.nextSibling.classList.toggle('active');
 
@@ -54,6 +61,7 @@ function Header() {
             <img src={profile} alt="profile" />
           </NavLink>
           <ShoppingCartButton onClick={openShoppingCart}>
+            <div className="cart-count">{cartCount}</div>
             <img src={box} alt="winebox" />
           </ShoppingCartButton>
         </Nav>
