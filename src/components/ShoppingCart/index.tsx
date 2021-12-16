@@ -37,17 +37,21 @@ function ShoppingCart() {
   }, []);
 
   const closeShoppingCart = ({ target }) => {
-    target.parentNode.parentNode.parentNode.classList.remove(
+    console.log(target)
+    target.nodeName === 'svg' ?
+    target.parentNode.parentNode.parentNode.classList.toggle(
       'shoppingCartActive'
-    );
+    ) : target.parentNode.parentNode.parentNode.parentNode.classList.toggle(
+      'shoppingCartActive'
+    )
     document.body.classList.remove('no-scroll');
   };
 
   return (
     <Container>
-      <div className="content">
+      <div className="content" data-testid="shopping-cart">
         <div className="title">
-          <BsArrowLeft size="20" onClick={closeShoppingCart} />
+          <BsArrowLeft size="20" onClick={closeShoppingCart} data-testid="back-button"/>
           <Paragraph size="large">WineBox ({cartItems?.totalItems})</Paragraph>
         </div>
         {cartItems.items.length !== 0 ? (

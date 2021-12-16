@@ -24,7 +24,7 @@ const checkProducts = (mock) => {
   })
 }
 
-describe('Navigation', () => {
+describe('Home page navigation', () => {
   beforeEach(() => {
     cy.viewport(1920, 939)
   })

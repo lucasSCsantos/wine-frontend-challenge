@@ -60,7 +60,7 @@ function Header() {
           <NavLink className="profile">
             <img src={profile} alt="profile" />
           </NavLink>
-          <ShoppingCartButton onClick={openShoppingCart}>
+          <ShoppingCartButton onClick={openShoppingCart} data-testid="cart-button">
             <div className="cart-count" data-testid="cart-count">{cartCount}</div>
             <img src={box} alt="winebox" />
           </ShoppingCartButton>

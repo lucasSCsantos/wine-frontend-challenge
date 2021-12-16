@@ -20,6 +20,7 @@ export const Container = styled.div`
     & > svg:first-child {
       cursor: pointer;
     }
+    
     p {
       margin-left: 20px;
     }

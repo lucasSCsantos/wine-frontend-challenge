@@ -55,7 +55,7 @@ const Product: NextPage<ProductProps> = ({ item }) => (
         NÃO SÓCIO R${item.priceNonMember.toFixed(2)}
       </SmallParagraph>
     </div>
-    <Button filled color="success" size="large" onClick={() => addToCart(item)}>
+    <Button filled color="success" size="large" onClick={() => addToCart(item)} data-testid={`${item.id}-product-button`}>
       Adicionar
     </Button>
   </ProductContainer>
