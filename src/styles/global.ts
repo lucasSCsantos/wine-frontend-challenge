@@ -10,6 +10,9 @@ export default createGlobalStyle`
   body {
 		background-color: ${({ theme }) => theme.color.background};
     overflow-x: hidden;
+    &.no-scroll {
+      overflow: hidden;
+    }
   }
 
   img {

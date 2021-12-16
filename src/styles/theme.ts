@@ -28,6 +28,11 @@ const theme = {
         default: '#B6116E',
         disabled: '#b55188',
         hover: '#990f5b'
+      },
+      white: {
+        default: '#FFFFFF',
+        disabled: '#FFFFFF1A',
+        hover: '#FFFFFF'
       }
     },
     branding: {
@@ -57,9 +62,17 @@ const theme = {
         width: '180px',
         height: '48px'
       },
+      product: {
+        width: '163px',
+        height: 'inherit'
+      },
       large: {
         width: '256px',
         height: '39.36px'
+      },
+      xLarge: {
+        width: '310px',
+        height: '48px'
       }
     }
   },

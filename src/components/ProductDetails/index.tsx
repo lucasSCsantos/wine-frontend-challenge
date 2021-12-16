@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { useState } from 'react';
+import { NextPage } from 'next';
 import { Button } from '../DefaultDesignComponents/Buttons';
 import {
   Heading,
@@ -6,13 +8,25 @@ import {
   SmallParagraph
 } from '../DefaultDesignComponents/Typography';
 import Price from '../DefaultDesignComponents/Typography/Price';
-import { item } from '../../__mocks__/base';
+import { ItemProps } from '../../__mocks__/base';
 import BreadCrumb from './Breadcrumb';
 import Details from './Details';
 import MobileButton from './MobileButton';
-import { Container, Image, InfoContainer, SmallImage } from './styles';
+import {
+  Container,
+  Image,
+  InfoContainer,
+  SmallImage,
+  AddButton
+} from './styles';
+import addToCart from '../../helpers/addToCart';
 
-function ProductPage() {
+interface ProductPageProps {
+  product: ItemProps;
+}
+
+const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
+  const [addCount, setAddCount] = useState(1);
   const {
     image,
     name,
@@ -28,8 +42,9 @@ function ProductPage() {
     region,
     price,
     discount,
+    volume,
     flag
-  } = item;
+  } = product;
   return (
     <Container>
       <div className="content">
@@ -60,7 +75,8 @@ function ProductPage() {
                   country,
                   classification,
                   rating,
-                  avaliations
+                  avaliations,
+                  volume
                 }}
               />
               <SmallImage src={image} />
@@ -90,17 +106,52 @@ function ProductPage() {
                 {sommelierComment}
               </Paragraph>
             </div>
-            <Button filled color="success" size="large">
-              Adicionar
-            </Button>
+            <AddButton>
+              <div className="count-button">
+                <Button
+                  size="mini"
+                  color="white"
+                  circle
+                  onClick={() => {
+                    if (addCount > 1) setAddCount(addCount - 1);
+                  }}
+                >
+                  -
+                </Button>
+                {addCount}
+                <Button
+                  size="mini"
+                  color="white"
+                  circle
+                  onClick={() => setAddCount(addCount + 1)}
+                >
+                  +
+                </Button>
+              </div>
+              <Button
+                size="product"
+                filled
+                color="success"
+                weight="bold"
+                onClick={() =>
+                  Array.from({ length: addCount }, (_v, k) => k).map(() => {
+                    addToCart(product);
+                    return null;
+                  })
+                }
+              >
+                Adicionar
+              </Button>
+            </AddButton>
           </div>
           <MobileButton
+            product={product}
             priceData={{ discount, price, priceMember, priceNonMember }}
           />
         </InfoContainer>
       </div>
     </Container>
   );
-}
+};
 
 export default ProductPage;

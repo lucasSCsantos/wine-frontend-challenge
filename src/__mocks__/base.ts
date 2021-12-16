@@ -225,6 +225,7 @@ export type ItemProps = {
   priceMember: number;
   priceNonMember: number;
   type: string;
+  size: string;
   classification: string;
   volume: string;
   rating: number;

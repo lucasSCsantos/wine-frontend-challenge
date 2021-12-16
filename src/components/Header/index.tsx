@@ -1,15 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import NavLink from './NavLink';
-import { Container, Nav, SearchButton } from './styles';
+import { Container, Nav, SearchButton, ShoppingCartButton } from './styles';
 import logo from '../../images/black.svg';
 import box from '../../images/winebox.svg';
 import search1 from '../../images/search.svg';
 import profile from '../../images/profile.svg';
 import menu from '../../images/menu.svg';
 import SearchBar from './SearchBar';
+import ShoppingCart from '../ShoppingCart';
 
 function Header() {
   const [search, setSearch] = useState('');
+  const [cartCount, setCartCount] = useState(0);
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    setCartCount(cartItems?.totalItems || 0);
+  }, []);
+
   const openMenu = ({ target }) =>
     target.parentNode.nextSibling.nextSibling.classList.toggle('active');
 
@@ -18,6 +26,14 @@ function Header() {
       'searchActive'
     );
   };
+
+  const openShoppingCart = ({ target }) => {
+    target.parentNode.parentNode.parentNode.nextSibling.nextSibling.classList.add(
+      'shoppingCartActive'
+    );
+    document.body.classList.add('no-scroll');
+  };
+
   return (
     <Container>
       <div className="content">
@@ -44,15 +60,17 @@ function Header() {
           <NavLink className="profile">
             <img src={profile} alt="profile" />
           </NavLink>
-          <NavLink>
+          <ShoppingCartButton onClick={openShoppingCart}>
+            <div className="cart-count">{cartCount}</div>
             <img src={box} alt="winebox" />
-          </NavLink>
+          </ShoppingCartButton>
         </Nav>
       </div>
       <SearchBar
         onChange={({ target }) => setSearch(target.value)}
         value={search}
       />
+      <ShoppingCart />
     </Container>
   );
 }

@@ -35,7 +35,7 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
   .info {
     width: 462px;
-    height: 500px;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -98,7 +98,7 @@ export const DetailsContainer = styled.div`
   justify-content: space-between;
   ${({ theme }) => css`
     @media (max-width: ${theme.breakpoint.laptop}) {
-      width: 250px;
+      width: 300px;
       & > small:nth-child(7) {
         display: none;
       }
@@ -143,6 +143,38 @@ export const MobileButtonContainer = styled.div`
     @media (max-width: ${theme.breakpoint.laptop}) {
       display: flex;
       background-color: ${theme.color.structure.white};
+    }
+  `};
+`;
+
+export const AddButton = styled.div`
+  font-size: 24px;
+  font-family: Lato;
+  color: ${({ theme }) => theme.color.structure.white};
+  width: 328px;
+  height: 56px;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.color.functional.success.default};
+  display: flex;
+  align-items: center;
+  .count-button {
+    button {
+      font-weight: 600;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 2px;
+    }
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-right: 2px solid ${({ theme }) => theme.color.structure.white};
+  }
+  ${({ theme }) => css`
+    @media (max-width: ${theme.breakpoint.laptop}) {
+      display: none;
     }
   `};
 `;

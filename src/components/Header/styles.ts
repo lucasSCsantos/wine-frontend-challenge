@@ -72,7 +72,8 @@ export const Nav = styled.ul<NavProps>`
     ${() =>
       icon &&
       css`
-        li {
+        li,
+        button {
           margin-left: 42px;
         }
         ${({ theme }) => css`
@@ -162,6 +163,35 @@ export const NavLinkContainer = styled.li`
   border-bottom: 2px solid ${({ theme }) => theme.color.structure.transparent};
 `;
 
+export const ShoppingCartButton = styled.button`
+  background-color: red;
+  .cart-count {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    color: #5cb79f;
+    background-color: #f5f5f5;
+  }
+  img {
+    width: 56px;
+    height: 56px;
+  }
+  position: relative;
+  background-color: ${({ theme }) => theme.color.structure.transparent};
+  border: none;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  cursor: pointer;
+  border-bottom: 2px solid ${({ theme }) => theme.color.structure.transparent};
+`;
+
 export const SearchButton = styled.button`
   img {
     width: 56px;
@@ -179,6 +209,7 @@ export const SearchButton = styled.button`
 export const SearchBarContainer = styled.div`
   display: none;
   width: 100vw;
+  z-index: 20;
   position: absolute;
   bottom: -73px;
   height: 73px;
