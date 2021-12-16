@@ -40,6 +40,7 @@ function ShoppingCart() {
     target.parentNode.parentNode.parentNode.classList.remove(
       'shoppingCartActive'
     );
+    document.body.classList.remove('no-scroll');
   };
 
   return (
