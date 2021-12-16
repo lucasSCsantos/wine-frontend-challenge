@@ -81,9 +81,27 @@ export const Container = styled.div`
         border-top: 0.5px solid ${theme.color.gray.light};
       }
       .pagination {
-        display: none;
+        font-size: 10px;
+
+        .next-item {
+          margin-left: 4px;
+        }
+        .previous-item {
+          margin-right: 4px;
+        }
+        .break {
+          margin: 0 2px;
+        }
+        .page-item {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+          margin: 0 4px;
+        }
+        .active + .page-item {
+          width: 48px;
+        }
       }
-    }
   `}
 `;
 

@@ -22,8 +22,8 @@ interface CartProductProps {
 }
 
 const CartProduct: NextPage<CartProductProps> = ({ item }) => (
-  <CartProductContainer key={item.id}>
-    <TiDeleteOutline onClick={() => deleteFromCart(item)} />
+  <CartProductContainer data-testid={`${item.id}-cart-product`}>
+    <TiDeleteOutline onClick={() => deleteFromCart(item)} data-testid={`${item.id}-remove-all`}/>
     <Price value={item.count * item.priceNonMember} size="xSmall" />
     <img src={item.image} alt={item.name} />
     <div className="cart-item-details">
@@ -34,7 +34,7 @@ const CartProduct: NextPage<CartProductProps> = ({ item }) => (
         {item.country}
       </SmallParagraph>
       <div className="cart-item-count">
-        <button type="button" onClick={() => removeOfCart(item)}>
+        <button type="button" onClick={() => removeOfCart(item)} data-testid={`${item.id}-remove-one`}>
           -
         </button>
         {item.count}

@@ -7,10 +7,11 @@ const { font } = theme;
 interface PriceProps {
   value: number;
   size?: keyof typeof font.size;
+  dataTestid?: string;
 }
 
-const Price: NextPage<PriceProps> = ({ value, size }) => (
-  <PriceRoot size={size}>
+const Price: NextPage<PriceProps> = ({ value, size, dataTestid }) => (
+  <PriceRoot size={size} data-testid={dataTestid}>
     R$<span className="int">{Math.trunc(value)}</span>
     <span className="float">
       {`${(value - Math.trunc(value)).toFixed(2)}`.substring(1)}

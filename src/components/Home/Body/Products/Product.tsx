@@ -15,15 +15,15 @@ interface ProductProps {
 }
 
 const Product: NextPage<ProductProps> = ({ item }) => (
-  <ProductContainer>
+  <ProductContainer data-testid={`${item.id}-product-card`}>
     <div className="product-card">
       <Link
         href={`/vinhos/${encodeURIComponent(item.name)}/id=${item.id}`}
         replace
       >
         <div className="product-title">
-          <Image src={item.image} />
-          <Paragraph size="small" weight="bold">
+          <Image src={item.image} data-testid={`${item.id}-product-image`}/>
+          <Paragraph size="small" weight="bold" data-testid={`${item.id}-product-name`}>
             {item.name}
           </Paragraph>
         </div>
@@ -55,7 +55,7 @@ const Product: NextPage<ProductProps> = ({ item }) => (
         NÃO SÓCIO R${item.priceNonMember.toFixed(2)}
       </SmallParagraph>
     </div>
-    <Button filled color="success" size="large" onClick={() => addToCart(item)}>
+    <Button filled color="success" size="large" onClick={() => addToCart(item)} data-testid={`${item.id}-product-button`}>
       Adicionar
     </Button>
   </ProductContainer>

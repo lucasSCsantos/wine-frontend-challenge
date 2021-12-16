@@ -54,14 +54,14 @@ function Header() {
           </NavLink>
         </Nav>
         <Nav icon>
-          <SearchButton onClick={openSearch}>
+          <SearchButton onClick={openSearch} data-testid="search-button">
             <img src={search1} alt="search" />
           </SearchButton>
           <NavLink className="profile">
             <img src={profile} alt="profile" />
           </NavLink>
-          <ShoppingCartButton onClick={openShoppingCart}>
-            <div className="cart-count">{cartCount}</div>
+          <ShoppingCartButton onClick={openShoppingCart} data-testid="cart-button">
+            <div className="cart-count" data-testid="cart-count">{cartCount}</div>
             <img src={box} alt="winebox" />
           </ShoppingCartButton>
         </Nav>
