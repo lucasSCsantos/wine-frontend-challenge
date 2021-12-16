@@ -53,7 +53,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
             {'<'} Voltar
           </Heading>
         </Link>
-        <InfoContainer>
+        <InfoContainer data-testid="page-info">
           <Image src={image} />
           <div className="info">
             <div className="info-title">
@@ -124,6 +124,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                   color="white"
                   circle
                   onClick={() => setAddCount(addCount + 1)}
+                  data-testid="add-on-count"
                 >
                   +
                 </Button>
@@ -133,6 +134,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
                 filled
                 color="success"
                 weight="bold"
+                data-testid="add-prodcut-from-details"
                 onClick={() =>
                   Array.from({ length: addCount }, (_v, k) => k).map(() => {
                     addToCart(product);

@@ -37,7 +37,6 @@ function ShoppingCart() {
   }, []);
 
   const closeShoppingCart = ({ target }) => {
-    console.log(target)
     target.nodeName === 'svg' ?
     target.parentNode.parentNode.parentNode.classList.toggle(
       'shoppingCartActive'
@@ -54,21 +53,23 @@ function ShoppingCart() {
           <BsArrowLeft size="20" onClick={closeShoppingCart} data-testid="back-button"/>
           <Paragraph size="large">WineBox ({cartItems?.totalItems})</Paragraph>
         </div>
-        {cartItems.items.length !== 0 ? (
-          cartItems?.items?.map(item => (
-            <CartProduct key={item.id} item={item} />
-          ))
-        ) : (
-          <Paragraph weight="bold" size="xxLarge" lineHeight="20px">
-            Você ainda não adicionou items ao carrinho
-          </Paragraph>
-        )}
+        <div className="cart-items">
+          {cartItems.items.length !== 0 ? (
+            cartItems?.items?.map(item => (
+              <CartProduct key={item.id} item={item} />
+            ))
+          ) : (
+            <Paragraph weight="bold" size="xxLarge" lineHeight="20px">
+              Você ainda não adicionou items ao carrinho
+            </Paragraph>
+          )}
+        </div>
         <div className="checkout">
           <div className="checkout-price">
             <SmallParagraph size="large" align="start" type="gray">
               Total
             </SmallParagraph>
-            <Price value={cartItems.totalPrice} size="xLarge" />
+            <Price value={cartItems.totalPrice} size="xLarge" dataTestid="cart-total" />
           </div>
           <Button color="success" filled size="xLarge">
             Finalizar pedido

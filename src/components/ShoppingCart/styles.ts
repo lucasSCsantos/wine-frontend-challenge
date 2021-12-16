@@ -34,6 +34,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    .cart-items {
+      overflow-y: auto;
+      height: 78%;
+    }
   }
   .checkout {
     width: 100%;
