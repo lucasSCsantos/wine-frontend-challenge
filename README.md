@@ -11,13 +11,14 @@
 - Buscar produtos pelo nome
 - Página detalhada de produto
 - Adicionar ou remover um produto no carrinho
+- Testes e2e com cypress
 
 ## Instalação
 
 1. Clone o repositório
 
 ```javascript
-git clone https://github.com/lucasSCsantos/tractian-frontend-challenge.git
+git clone https://github.com/lucasSCsantos/wine-frontend-challenge.git
 ```
 
 2. Instale as dependencias
@@ -34,6 +35,6 @@ yarn dev
 
 ## Feito com
 
-- [Next](https://pt-br.reactjs.org/)
-- [Styled Components](https://reactrouter.com/)
-- [TypeScript](https://ant.design/)
+- [Next](https://nextjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript](https://www.typescriptlang.org/)
