@@ -1,23 +1,6 @@
-import priceFilter from '../../src/data/price-filter';
-import { base, base2, baseFiltered, baseSearch, item } from '../../src/__mocks__/base';
+import { item } from '../../src/__mocks__/base';
 
-
-const checkProducts = (mock) => {
-  // Observa se a quantidade de itens total está correta
-  cy.get('[data-testid="products-count"]')
-  .contains(mock.totalItems); 
-  // Observa se existem a quantidade de items corretos e com as informações corretas
-  mock.items.forEach(({ id, image, name }) => {
-    cy.get(`[data-testid="${id}-product-card"]`);
-    cy.get(`[data-testid="${id}-product-image"]`)
-      .should('have.attr', 'src')
-      .should('include', image);
-    cy.get(`[data-testid="${id}-product-name"]`)
-    .contains(name);
-  })
-}
-
-describe('Home page navigation', () => {
+describe('Product page navigation', () => {
   beforeEach(() => {
     cy.viewport(1920, 939)
   })

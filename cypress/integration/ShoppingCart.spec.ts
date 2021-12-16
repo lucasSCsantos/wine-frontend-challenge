@@ -39,7 +39,7 @@ const removeProducts = () => {
 	})
 }
 
-describe('Navigation', () => {
+describe('Shopping cart navigation', () => {
   beforeEach(() => {
     cy.viewport(1920, 939)
   })
