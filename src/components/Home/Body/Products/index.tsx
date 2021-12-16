@@ -36,7 +36,7 @@ function Products() {
   return (
     <Container>
       <SmallParagraph size="medium">
-        <span>{totalItems}</span>
+        <span data-testid="products-count">{totalItems}</span>
         {`${' produtos encontrados'}`}
       </SmallParagraph>
       <hr />
