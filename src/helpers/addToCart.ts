@@ -1,6 +1,6 @@
 import Router from 'next/router';
 
-export default item => {
+const addToCart = item => {
   const { image, name, country, priceNonMember, id: itemId } = item;
   const itemToAdd = {
     name,
@@ -42,3 +42,5 @@ export default item => {
     });
   }
 };
+
+export default addToCart;
