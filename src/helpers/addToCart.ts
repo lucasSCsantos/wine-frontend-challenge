@@ -40,5 +40,6 @@ export default item => {
       totalItems: 1,
       items: [itemToAdd]
     });
+    Router.reload();
   }
 };
