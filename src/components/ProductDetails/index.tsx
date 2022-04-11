@@ -45,6 +45,7 @@ const ProductPage: NextPage<ProductPageProps> = ({ product }) => {
     volume,
     flag
   } = product;
+  
   return (
     <Container>
       <div className="content">

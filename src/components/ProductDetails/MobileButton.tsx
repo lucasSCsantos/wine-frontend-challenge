@@ -35,7 +35,7 @@ const MobileButton: NextPage<MobileButtonProps> = ({ priceData, product }) => {
         </SmallParagraph>
         <Price value={priceMember} size="small" />
         <SmallParagraph size="mini" weight="bold" type="gray">
-          PREÇO NÃO SÓCIO R${priceNonMember.toFixed(2)}
+          PREÇO NÃO SÓCIO R$ {priceNonMember.toFixed(2)}
         </SmallParagraph>
       </div>
       <Button
