@@ -1,5 +1,10 @@
 <h1 align="center">
-  <img alt="Home" href="https://wine-frontend-challenge.vercel.app/" src="https://d2duuy9yo5pldo.cloudfront.net/dashboard-resources/wine/e90faa36-9670-4bd4-a063-8818d3f9d20e.png"/>
+  Wine front-end challenge
+  <
+    img alt="Home" 
+    href="https://wine-frontendchallenge.vercel.app/"
+    src="https://s3.amazonaws.com/gupy5/production/socialmedias/182/b488f5de565dd8eebb082189dbb3283f_logo%20wine.png"
+   />
 </h1>
 
 <p align="center">
