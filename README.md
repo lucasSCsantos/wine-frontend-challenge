@@ -18,7 +18,7 @@
 
 # :page_with_curl: Sobre
 
-Essa aplicação foi desenvolvida como teste técnico front-end para a empresa [Wine](https://www.wine.com.br/). A aplicação foi desenvolvida com o [Next.js](https://nextjs.org/) e [TypeScript](https://www.typescriptlang.org/). No primeiro momento foi desenvolvido o theme e os componentes de design system baseados nesse [layout](https://www.figma.com/file/gByBxI9GBHKUjXRtO2fFh2/28%2F10-%F0%9F%96%A5-%F0%9F%93%B1---Wine-Test---WEB-%26-APP?node-id=680%3A6449) usando [Styled-components](https://styled-components.com/). O usuário pode listar produtos por página, adicionar e remover produtos ao carrinho, pesquisar produtos por nome, filtrar por preço e ver uma página de detalhes para cada produto. Além disso a página é totalmente responsiva e contém testes e2e com [Cypress](https://www.cypress.io/).
+Essa aplicação foi desenvolvida como teste técnico front-end para a empresa [Wine](https://www.wine.com.br/). A aplicação foi desenvolvida com o [Next.js](https://nextjs.org/) e [TypeScript](https://www.typescriptlang.org/). No primeiro momento foi desenvolvido o theme e os componentes de design system baseados nesse [layout](https://www.figma.com/file/gByBxI9GBHKUjXRtO2fFh2/28%2F10-%F0%9F%96%A5-%F0%9F%93%B1---Wine-Test---WEB-%26-APP?node-id=680%3A6449) usando [Styled-components](https://styled-components.com/). O usuário pode listar produtos por página, adicionar e remover produtos ao carrinho, pesquisar produtos por nome, filtrar por preço e ver uma página de detalhes para cada produto. Além disso a página é totalmente responsiva e contém testes e2e com [Cypress](https://www.cypress.io/). O gerenciamento de estado da aplicação foi feito com [Redux](https://redux.js.org/) e [Redux-Saga](https://redux-saga.js.org/).
 
 # 🔧 Recursos
 
@@ -40,6 +40,8 @@ Esse projeto foi desenvolvido com:
 - [Styled-components](https://styled-components.com/)
 - [ESLint](https://eslint.org/)
 - [Cypress](https://www.cypress.io/)
+- [Redux](https://redux.js.org/)
+- [Redux-Saga](https://redux-saga.js.org/)
 
 # :arrow_down: Instalação
 ``` bash
