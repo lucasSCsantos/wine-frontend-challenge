@@ -10,7 +10,7 @@
 </p>
 
 <h1 align="center">
-  <img alt="Home" src="https://imgur.com/ivIB0bV"/>
+  <img alt="Home" src="https://imgur.com/ivIB0bV.gif"/>
 </h1>
 
 # :page_with_curl: Sobre
@@ -19,7 +19,7 @@ Essa aplicação foi desenvolvida como teste técnico front-end para a empresa [
 
 # 🔧 Recursos
 
-<img alt="Resources" src="https://imgur.com/jg8RdPb"/>
+<img alt="Resources" src="https://imgur.com/jg8RdPb.gif"/>
 
 - Listar produtos com paginação
 - Filtrar produtos por preço
