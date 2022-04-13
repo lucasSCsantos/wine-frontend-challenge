@@ -1,5 +1,7 @@
 <h1 align="center">
-  <img alt="Home" href="https://wine-frontendchallenge.vercel.app/" src="https://cuponomia-a.akamaihd.net/img/stores/original/wine-637032938949383777.png"/>
+  <a  href="https://wine-frontendchallenge.vercel.app/" target="_blank">
+    <img alt="Home" href="https://wine-frontendchallenge.vercel.app/" src="https://cuponomia-a.akamaihd.net/img/stores/original/wine-637032938949383777.png"/>
+  </a>
   <br/>
   <br/>
   Wine front-end challenge
