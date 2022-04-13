@@ -2,7 +2,7 @@
   Wine front-end challenge
   <br/>
   <br/>
-  <img alt="Home" href="https://wine-frontendchallenge.vercel.app/" src="https://s3.amazonaws.com/gupy5/production/socialmedias/182/b488f5de565dd8eebb082189dbb3283f_logo%20wine.png"/>
+  <img alt="Home" href="https://wine-frontendchallenge.vercel.app/" src="https://cuponomia-a.akamaihd.net/img/stores/original/wine-637032938949383777.png"/>
 </h1>
 
 <p align="center">
