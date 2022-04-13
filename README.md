@@ -1,8 +1,8 @@
 <h1 align="center">
-  Wine front-end challenge
-  <br/>
-  <br/>
   <img alt="Home" href="https://wine-frontendchallenge.vercel.app/" src="https://cuponomia-a.akamaihd.net/img/stores/original/wine-637032938949383777.png"/>
+  <br/>
+  <br/>
+  Wine front-end challenge
 </h1>
 
 <p align="center">
